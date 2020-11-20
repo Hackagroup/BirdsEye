@@ -20,7 +20,7 @@ function Dashboard() {
   }
 
   async function createTweet() {
-    // Not done lol
+    
   }
 
   return (
