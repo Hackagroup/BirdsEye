@@ -10,13 +10,11 @@ import Dashboard from './views/dashboard/'
 import Login from './views/login/'
 
 import store from './store'
-// import setAuthToken from './utils/setAuthToken';
 import { SET_USER } from './actions/types'
 import isEmpty from './utils/isEmpty'
 
 // Check for user credentials in local storage (in-case app is reloaded/reopened)
 if (!isEmpty(localStorage.userCredentials)) {
-  // setAuthToken(localStorage.userCredentials);
   store.dispatch({
     type: SET_USER,
     payload: {
