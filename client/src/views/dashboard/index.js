@@ -19,13 +19,21 @@ function Dashboard() {
     setLoading(false)
   }
 
+  async function createTweet() {
+    // Not done lol
+  }
+
   return (
     <>
       <Helmet>
         <title>Dashboard</title>
       </Helmet>
       <div>Dashboard page (Private)</div>
-      <br />
+        <div>
+        <div> Create a tweet </div>
+         <input type="text" placeholder="Type a tweet" onclick={createTweet}/>
+        </div>
+      <br/>
       {loading ? (
         <div>Fetching tweets...</div>
       ) : (
