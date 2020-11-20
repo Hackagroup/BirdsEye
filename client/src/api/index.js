@@ -30,6 +30,17 @@ const API = {
       }
     },
   },
+  post: {
+    get: async (urlParam = '', queryParam = {}) => {
+      const { POST: BaseURL } = API_ENDPOINTS
+      try {
+        const res = await axios.post(createURL(BaseURL, urlParam, queryParam))
+        return { ...res.data }
+      } catch (err) {
+        return createErrorMessage(err)
+      }
+    },
+  },
 }
 
 export default API

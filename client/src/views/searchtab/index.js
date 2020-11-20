@@ -1,20 +1,15 @@
 import React, { useState } from 'react'
-import { Helmet } from 'react-helmet'
-//import { use } from '../../../../routes/login'
 import API from '../../api'
+import { Helmet } from 'react-helmet'
 
-function Dashboard() {
+function SearchTab() {
   const [search, setSearch] = useState('')
-  const [thats_the_tweet, setTheTweet] = useState('')
   const [loading, setLoading] = useState(false)
   const [tweets, setTweets] = useState([])
 
-  async function createTweet() {
-    // create tweet function
-  }
-
-  async function postATweet() {
-    const response = await API.search.get('', { searchQuery: search, result_type:"popular", count: 20 })
+  async function handleSubmit() {
+    setLoading(true)
+    const response = await API.search.get('', { searchQuery: search })
     if (response.message == null) {
       const { tweets } = response
       const { statuses } = tweets
@@ -27,10 +22,8 @@ function Dashboard() {
   return (
     <>
       <Helmet>
-        <title>Dashboard</title>
+        <title>Search</title>
       </Helmet>
-      <div>Dashboard page (Private)</div>
-      <br />
       {loading ? (
         <div>Fetching tweets...</div>
       ) : (
@@ -40,21 +33,9 @@ function Dashboard() {
           <button type="button" onClick={handleSubmit}>
             Go
           </button>
-          <div>Share something!</div>
-          <input
-            type="text"
-            value={thats_the_tweet}
-            onChange={(e) => setTheTweet(e.target.value)}
-          />
-          <button type="button" onClick={postATweet}>
-            Tweet
-          </button>
-
           <hr />
           <div>Search result</div>
           {tweets.map((tweet) => {
-            if(tweet.user.verified){
-            console.log(tweet.user.verified);
             const hashtags = tweet?.entities?.hashtags ?? []
             return (
               <div key={tweet.id_str}>
@@ -63,15 +44,14 @@ function Dashboard() {
                 <div>
                   Hashtags: {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
                 </div>
-                <div>Verified {tweet.user.verified ? "The user is verified": console.log("not verified")}</div>
                 <hr />
               </div>
             )
-          }})}
+          })}
         </>
       )}
     </>
   )
 }
 
-export default Dashboard
+export default SearchTab

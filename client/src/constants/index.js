@@ -9,6 +9,7 @@ export const API_ENDPOINTS = {
   LOGIN: `${API_BASE_URL[environment]}/login`,
   REQUEST_TOKEN_URL: `${API_BASE_URL[environment]}/login/request_token`,
   SEARCH: `${API_BASE_URL[environment]}/search`,
+  POST: `${API_BASE_URL[environment]}/post`,
 }
 
 export const resultType = "result_type=popular";
