@@ -18,7 +18,7 @@ Gif of web app coming soon...
 
 ```
 # Clone Repository
-git clone https://github.com/Hackagroup/Twitive
+git clone https://github.com/Hackagroup/Twittive
 cd Twittive
 
 # Run Setup
