@@ -3,7 +3,13 @@ import { API_ENDPOINTS } from '../constants';
 import isEmpty from '../utils/isEmpty';
 
 const createURL = (baseURL = '', urlParam = '', queryParam = {}) => {
-  return `${baseURL}/${urlParam}?${new URLSearchParams(queryParam).toString()}`;
+  const userCredentials = JSON.parse(localStorage.userCredentials);
+  const queryParamsWithAuth = {
+    access_token_key: userCredentials.oauth_token,
+    access_token_secret: userCredentials.oauth_token_secret,
+    ...queryParam,
+  }
+  return `${baseURL}/${urlParam}?${new URLSearchParams(queryParamsWithAuth).toString()}`;
 };
 
 const createErrorMessage = (err) => ({

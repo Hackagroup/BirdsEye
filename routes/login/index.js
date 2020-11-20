@@ -32,7 +32,7 @@ router.post('/request_token', async (req, res) => {
             .status(200)
             .json(JSON.parse('{ "' + body.replace(/&/g, '", "').replace(/=/g, '": "') + '"}'))
         } catch (err) {
-          logger.error(err.stack)
+          logger.error(err.stack ? err.stack : JSON.stringify(err))
           return res.status(400).json({
             message: 'Unknown error occurred!',
           })
@@ -40,7 +40,7 @@ router.post('/request_token', async (req, res) => {
       }
     )
   } catch (err) {
-    logger.error(err.stack)
+    logger.error(err.stack ? err.stack : JSON.stringify(err))
     return res.status(400).json({
       message: 'Unknown error occurred!',
     })
@@ -78,7 +78,7 @@ router.post('/', async (req, res) => {
             .status(200)
             .json(JSON.parse('{ "' + body.replace(/&/g, '", "').replace(/=/g, '": "') + '"}'))
         } catch (err) {
-          logger.error(err.stack)
+          logger.error(err.stack ? err.stack : JSON.stringify(err))
           return res.status(400).json({
             message: 'Unknown error occurred!',
           })
@@ -86,7 +86,7 @@ router.post('/', async (req, res) => {
       }
     )
   } catch (err) {
-    logger.error(err.stack)
+    logger.error(err.stack ? err.stack : JSON.stringify(err))
     return res.status(400).json({
       message: 'Unknown error occurred!',
     })

@@ -10,10 +10,12 @@ function Dashboard() {
   async function handleSubmit() {
     setLoading(true);
     const response = await API.search.get('', { searchQuery: search })
-    const { tweets } = response;
-    const { statuses } = tweets;
-    console.log(tweets)
-    setTweets(statuses ?? []);
+    if (response.message == null) {
+      const { tweets } = response;
+      const { statuses } = tweets;
+      console.log(tweets)
+      setTweets(statuses ?? []);
+    }
     setLoading(false);
   }
 
@@ -34,7 +36,7 @@ function Dashboard() {
             <input type='text' value={search} onChange={(e) => setSearch(e.target.value)} />
             <button type="button" onClick={handleSubmit} >Go</button>
             <hr/>
-            <div>Seach result</div>
+            <div>Search result</div>
             {
               tweets.map(tweet => {
                 const hashtags = tweet?.entities?.hashtags ?? []

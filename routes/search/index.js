@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     let client = new Twitter({
       consumer_key: process.env.TWITTER_CONSUMER_API_KEY,
       consumer_secret: process.env.TWITTER_CONSUMER_API_SECRET,
-      access_token_key: req.query.access_token,
+      access_token_key: req.query.access_token_key,
       access_token_secret: req.query.access_token_secret
     });
     client.get('search/tweets', { q: req.query.searchQuery }, function(err, tweets, response) {
@@ -21,14 +21,14 @@ router.get('/', async (req, res) => {
       if (err) throw err;
       return res.status(200).json({ tweets })
       } catch (err) {
-        logger.error(err.stack)
+        logger.error(err.stack ? err.stack : JSON.stringify(err))
         return res.status(400).json({
           message: 'Unknown error occurred!',
         })
       }
    });
   } catch (err) {
-    logger.error(err.stack)
+    logger.error(err.stack ? err.stack : JSON.stringify(err))
     return res.status(400).json({
       message: 'Unknown error occurred!',
     })
