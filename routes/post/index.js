@@ -18,12 +18,12 @@ router.post('/', async (req, res) => {
     client.post(
       'statuses/update',
       { status: req.query.tweet_body },
-      function (error, tweet, response) {
+      function (error, tweets, response) {
         try {
           if (error) throw error
-          console.log(tweet)
+          console.log(tweets)
           console.log(response) // raw response object
-          return res.status(200).json({ tweet })
+          return res.status(200).json({ tweets })
         } catch (err) {
           logger.error(err.stack ? err.stack : JSON.stringify(err))
           return res.status(400).json({

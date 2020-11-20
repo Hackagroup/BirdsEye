@@ -39,9 +39,9 @@ function Dashboard() {
           <>
             <div>Search some tweets:</div>
             <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
-            <button type="button" onClick={handleSubmit}>
+            {/* <button type="button" onClick={handleSubmit}>
               Go
-          </button>
+          </button> */}
             <div>Share something!</div>
             <input type="text" value={thats_the_tweet} onChange={(e) => setTheTweet(e.target.value)} />
             <button type="button" onClick={postATweet}>
