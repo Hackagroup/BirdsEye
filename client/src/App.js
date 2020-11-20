@@ -9,6 +9,7 @@ import Landing from './views/landing/'
 import Dashboard from './views/dashboard/'
 import Login from './views/login/'
 import Navigation from './views/navigation'
+import SearchTab from './views/searchtab'
 
 import store from './store'
 import { SET_USER } from './actions/types'
@@ -36,6 +37,7 @@ function App() {
         <Switch>
           <Route exact path="/landing" component={Landing} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/search" component={SearchTab}/> 
           <Route exact path="/login" component={Login} />
           {/* Default route */}
           <Route component={Landing} />
