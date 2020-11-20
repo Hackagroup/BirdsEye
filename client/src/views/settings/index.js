@@ -1,24 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Helmet } from 'react-helmet'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 function Settings() {
-  function getUser() {
-    return localStorage.getItem('userCredentials')
-  }
-
-  let userData = JSON.parse(getUser())
-  // use userData.userID to fetch more data
+  const user = useSelector((state) => state.user)
+  const { userCredentials } = user
+  const { screen_name } = userCredentials
 
   return (
     <>
       <Helmet>
-        <title title>Settings</title>
+        <title>#BirdsEye - Settings</title>
       </Helmet>
       <div id="lower">
         <img src="https://i.imgur.com/qZJqj94.png" />
-        <p>username : {userData['screen_name']} </p>
-        <p> Other Info </p>
+        <p>Username: {screen_name}</p>
+        <p>Other Info</p>
       </div>
     </>
   )

@@ -4,10 +4,10 @@ const router = express.Router()
 // For all routes: `/login/<>`
 router.use('/login', require('./login/'))
 
-// For all routes: `/search/<>`
-router.use('/search', require('./search/'))
+// For all routes: `/user/<>`
+router.use('/user', require('./user/'))
 
-// For all routes: `/post/<>`
-router.use('/post', require('./post/'))
+// For all routes: `/tweet/<>`
+router.use('/tweet', require('./tweet/'))
 
 module.exports = router

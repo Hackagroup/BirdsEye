@@ -1,22 +1,53 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 import { Helmet } from 'react-helmet'
-import { Link } from 'react-router-dom'
+import { API_ENDPOINTS } from '../../constants'
+import { SET_USER } from '../../actions/types'
+import TwitterLogin from 'react-twitter-auth/lib/react-twitter-auth-component.js'
+import './landing.css'
 
-function Landing() {
+function Login() {
+  const user = useSelector((state) => state.user)
+  const dispatch = useDispatch()
+  const { isAuthenticated } = user
+
+  function handleFailure(err) {
+    console.log(err)
+  }
+
+  function handleSuccess(res) {
+    res.json().then((userCredentials) => {
+      localStorage.setItem('userCredentials', JSON.stringify(userCredentials))
+      dispatch({
+        type: SET_USER,
+        payload: {
+          isAuthenticated: true,
+          userCredentials,
+        },
+      })
+    })
+  }
+
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />
+  }
+
   return (
     <>
       <Helmet>
-        <title>Login</title>
+        <title>#BirdsEye</title>
       </Helmet>
-      <div>
-        Landing page
-        <br />
-        <Link to="/login">Go to login</Link>
-        <br />
-        <Link to="/dashboard">Go to dashboard (must be authenticated first)</Link>
+      <div style={{ display: 'flex', justifyContent: 'center', padding: '50px 10px' }}>
+        <TwitterLogin
+          loginUrl={API_ENDPOINTS.LOGIN}
+          onFailure={handleFailure}
+          onSuccess={handleSuccess}
+          requestTokenUrl={API_ENDPOINTS.REQUEST_TOKEN_URL}
+        />
       </div>
     </>
   )
 }
 
-export default Landing
+export default Login

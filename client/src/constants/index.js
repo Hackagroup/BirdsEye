@@ -8,8 +8,6 @@ export const API_BASE_URL = {
 export const API_ENDPOINTS = {
   LOGIN: `${API_BASE_URL[environment]}/login`,
   REQUEST_TOKEN_URL: `${API_BASE_URL[environment]}/login/request_token`,
-  SEARCH: `${API_BASE_URL[environment]}/search`,
-  POST: `${API_BASE_URL[environment]}/post`,
+  TWEET: `${API_BASE_URL[environment]}/tweet`,
+  USER: `${API_BASE_URL[environment]}/user`,
 }
-
-export const resultType = "result_type=popular";

@@ -1,15 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { Helmet } from 'react-helmet'
 
 import PrivateRoute from './components/PrivateRoute'
+import Navbar from './components/Navbar'
 
 import Landing from './views/landing/'
 import Dashboard from './views/dashboard/'
-import Login from './views/login/'
-import Navigation from './views/navigation'
-import SearchTab from './views/searchtab'
+import Search from './views/search'
 import Settings from './views/settings'
 
 import store from './store'
@@ -31,16 +29,12 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Helmet>
-          <title>Twittive</title>
-        </Helmet>
-        <Navigation />
+        <Navbar />
         <Switch>
           <Route exact path="/landing" component={Landing} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/search" component={SearchTab} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/settings" component={Settings} />
+          <PrivateRoute exact path="/search" component={Search} />
+          <PrivateRoute exact path="/settings" component={Settings} />
           {/* Default route */}
           <Route component={Landing} />
         </Switch>

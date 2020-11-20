@@ -1,27 +1,18 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
-//import { use } from '../../../../routes/login'
 import API from '../../api'
+import './dashboard.css'
 
 function Dashboard() {
-  const [search, setSearch] = useState('')
-  const [thats_the_tweet, setTheTweet] = useState('')
+  const [tweetContent, setTweetContent] = useState('')
   const [loading, setLoading] = useState(false)
-  const [tweets, setTweets] = useState([])
 
-  async function createTweet() {
-    // create tweet function
-  }
-
-
-  async function postATweet() {
-
-    const response = await API.post.get('', { tweet_body: thats_the_tweet })
+  async function handleSubmit() {
+    setLoading(true)
+    const response = await API.tweet.post({ tweetBody: tweetContent })
     if (response.message == null) {
-      const { tweets } = response
-      const { statuses } = tweets
-      console.log(tweets)
-      setTweets(statuses ?? [])
+      const { tweet } = response
+      console.log(tweet)
     }
     setLoading(false)
   }
@@ -29,42 +20,25 @@ function Dashboard() {
   return (
     <>
       <Helmet>
-        <title>Dashboard</title>
+        <title>#BirdsEye - Dashboard</title>
       </Helmet>
-      <div>Dashboard page (Private)</div>
-      <br />
-      {loading ? (
-        <div>Fetching tweets...</div>
-      ) : (
+      <div style={{ padding: '5px 10px' }}>
+        {loading ? (
+          <p>Posting new tweet...</p>
+        ) : (
           <>
-            <div>Search some tweets:</div>
-            <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
-            {/* <button type="button" onClick={handleSubmit}>
-              Go
-          </button> */}
-            <div>Share something!</div>
-            <input type="text" value={thats_the_tweet} onChange={(e) => setTheTweet(e.target.value)} />
-            <button type="button" onClick={postATweet}>
-              Tweet
-          </button>
-
-            <hr />
-            <div>Search result</div>
-            {tweets.map((tweet) => {
-              const hashtags = tweet?.entities?.hashtags ?? []
-              return (
-                <div key={tweet.id_str}>
-                  <div>Text: {tweet.text}</div>
-                  <div>Created at: {tweet.created_at}</div>
-                  <div>
-                    Hashtags: {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
-                  </div>
-                  <hr />
-                </div>
-              )
-            })}
+            <p>Share something!</p>
+            <input
+              type="text"
+              value={tweetContent}
+              onChange={(e) => setTweetContent(e.target.value)}
+            />
+            <button type="button" onClick={handleSubmit}>
+              Tweet!
+            </button>
           </>
         )}
+      </div>
     </>
   )
 }

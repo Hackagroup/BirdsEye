@@ -9,8 +9,8 @@ function PrivateRoute(props) {
   const { isAuthenticated } = user
 
   if (isAuthenticated !== true) {
-    // If not logged in, redirect to login page
-    return <Redirect to="/login" />
+    // If not logged in, redirect to landing page
+    return <Redirect to="/landing" />
   }
 
   // If loggin in, render the component
