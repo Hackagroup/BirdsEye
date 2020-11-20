@@ -16,5 +16,4 @@ function PrivateRoute(props) {
   // If loggin in, render the component
   return <Route {...rest} component={Component} />
 }
-
 export default PrivateRoute
