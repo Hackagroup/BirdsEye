@@ -6,7 +6,7 @@ This Twitter is about generating motivating tweets. More Description about this 
 
 # Usage
 
-Gif of web app coming soon...
+Gif of web app coming soon
 
 <br>
 
