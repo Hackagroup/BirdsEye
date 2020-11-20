@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import API from '../../api'
-
+import { Helmet } from 'react-helmet'
 
 
 function SearchTab(){
@@ -21,8 +21,11 @@ function SearchTab(){
         setLoading(false)
     }
 
-    return(
+    return (
     <>
+      <Helmet>
+        <title>Search</title>
+      </Helmet>
     {loading ? (
         <div>Fetching tweets...</div>
     ) : (
