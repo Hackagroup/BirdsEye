@@ -10,9 +10,10 @@ function Settings(){
       return localStorage.getItem('userCredentials')
     }
 
-    let userData = (getUser())
-    console.log(userData["oauth_token_secret"])
-    console.log(userData.screen_name)
+    let userData = JSON.parse((getUser())
+    
+    )
+    // use userData.userID to fetch more data
 
     return(
         <>
@@ -21,12 +22,9 @@ function Settings(){
           </Helmet>
           <div id="lower">
             <img src="https://i.imgur.com/qZJqj94.png"/>
-
-            <p>username : {getUser()["screen_name"]} </p>
-            
+            <p>username : {userData["screen_name"]} </p>
             <p> Other Info </p>
           </div>
-
         </>
     )
 }
