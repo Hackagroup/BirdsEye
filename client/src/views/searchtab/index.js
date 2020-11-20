@@ -9,7 +9,7 @@ function SearchTab() {
 
   async function handleSubmit() {
     setLoading(true)
-    const response = await API.search.get('', { searchQuery: search })
+    const response = await API.search.get('', { searchQuery: search, result_type:"popular", count: 20 })
     if (response.message == null) {
       const { tweets } = response
       const { statuses } = tweets
@@ -36,18 +36,21 @@ function SearchTab() {
           <hr />
           <div>Search result</div>
           {tweets.map((tweet) => {
-            const hashtags = tweet?.entities?.hashtags ?? []
-            return (
-              <div key={tweet.id_str}>
-                <div>Text: {tweet.text}</div>
-                <div>Created at: {tweet.created_at}</div>
-                <div>
-                  Hashtags: {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
+            if(tweet.user.verified){
+              console.log(tweet.user.verified);
+              const hashtags = tweet?.entities?.hashtags ?? []
+              return (
+                <div key={tweet.id_str}>
+                  <div>Text: {tweet.text}</div>
+                  <div>Created at: {tweet.created_at}</div>
+                  <div>
+                    Hashtags: {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
+                  </div>
+                  <div>Verified {tweet.user.verified ? "The user is verified": console.log("not verified")}</div>
+                  <hr />
                 </div>
-                <hr />
-              </div>
-            )
-          })}
+              )
+            }})}
         </>
       )}
     </>
