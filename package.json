@@ -9,6 +9,8 @@
     "cors": "^2.8.5",
     "dotenv-safe": "^8.2.0",
     "express": "^4.17.1",
+    "request": "^2.88.2",
+    "twitter": "^1.7.1",
     "winston": "^3.3.3"
   },
   "devDependencies": {
