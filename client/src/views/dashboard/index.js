@@ -9,16 +9,8 @@ function Dashboard() {
   const [loading, setLoading] = useState(false)
   const [tweets, setTweets] = useState([])
 
-  async function handleSubmit() {
-    setLoading(true)
-    const response = await API.search.get('', { searchQuery: search })
-    if (response.message == null) {
-      const { tweets } = response
-      const { statuses } = tweets
-      console.log(tweets)
-      setTweets(statuses ?? [])
-    }
-    setLoading(false)
+  async function createTweet() {
+    // create tweet function
   }
 
 
