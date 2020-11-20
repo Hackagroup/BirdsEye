@@ -40,7 +40,7 @@ const API = {
         return createErrorMessage(err)
       }
     },
-  }
+  },
 }
 
 export default API

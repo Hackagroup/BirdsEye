@@ -34,13 +34,13 @@ function App() {
         <Helmet>
           <title>Twittive</title>
         </Helmet>
-        <Navigation/>
+        <Navigation />
         <Switch>
           <Route exact path="/landing" component={Landing} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/search" component={SearchTab}/> 
+          <Route exact path="/search" component={SearchTab} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/settings" component={Settings}/>
+          <Route exact path="/settings" component={Settings} />
           {/* Default route */}
           <Route component={Landing} />
         </Switch>
