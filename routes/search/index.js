@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
       access_token_key: req.query.access_token_key,
       access_token_secret: req.query.access_token_secret,
     })
-    client.get('search/tweets', { q: req.query.searchQuery }, function (err, tweets, response) {
+    client.get('search/tweets', { q: req.query.searchQuery, result_type: req.query.result_type, count: req.query.count}, function (err, tweets, response) {
       try {
         if (err) throw err
         return res.status(200).json({ tweets })

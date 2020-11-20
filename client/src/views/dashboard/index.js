@@ -9,7 +9,7 @@ function Dashboard() {
 
   async function handleSubmit() {
     setLoading(true)
-    const response = await API.search.get('', { searchQuery: search })
+    const response = await API.search.get('', { searchQuery: search, result_type:"popular", count: 20 })
     if (response.message == null) {
       const { tweets } = response
       const { statuses } = tweets
@@ -38,6 +38,8 @@ function Dashboard() {
           <hr />
           <div>Search result</div>
           {tweets.map((tweet) => {
+            if(tweet.user.verified){
+            console.log(tweet.user.verified);
             const hashtags = tweet?.entities?.hashtags ?? []
             return (
               <div key={tweet.id_str}>
@@ -46,10 +48,11 @@ function Dashboard() {
                 <div>
                   Hashtags: {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
                 </div>
+                <div>Verified {tweet.user.verified ? "The user is verified": console.log("not verified")}</div>
                 <hr />
               </div>
             )
-          })}
+          }})}
         </>
       )}
     </>

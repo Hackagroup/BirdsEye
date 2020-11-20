@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { API_ENDPOINTS } from '../constants'
+import { API_ENDPOINTS, resultType } from '../constants'
 import isEmpty from '../utils/isEmpty'
 
 const createURL = (baseURL = '', urlParam = '', queryParam = {}) => {
