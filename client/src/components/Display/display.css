@@ -9,20 +9,27 @@
 }
 
 .display_text{
-  /* position: absolute;
-  width: 460px;
-  height: 128px;
-  left: 505px;
-  top: 177px; */
 
-  font-family: Open Sans;
+  /* font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
   line-height: 33px;
   display: flex;
   align-items: center;
-  /* letter-spacing: -1.5px; */
 
   color: #000000;
+ */
+
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 33px;
+display: flex;
+align-items: center;
+letter-spacing: -1.5px;
+
+color: #000000;
 }
