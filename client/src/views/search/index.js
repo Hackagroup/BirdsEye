@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 import API from '../../api'
 import { Helmet } from 'react-helmet'
-<<<<<<< HEAD
 import keyword_extractor from 'keyword-extractor'
-=======
 import Display from '../../components/Display'
 import { Typography } from '@material-ui/core'
 import 'fontsource-roboto';
 
->>>>>>> 83fddb630b5fef716825cbba30c453b36afb7191
 
 function Search() {
   const [search, setSearch] = useState('')
@@ -74,7 +71,7 @@ function Search() {
                 return (
                   <div key={tweet.id_str}>
                     <Display props={tweet} />
-                    {/* <div>Text: {tweet.text}</div>
+                     <div>Text: {tweet.text}</div>
                     <div><b>Created at: {tweet.created_at}</b></div>
                     <div>
                       Hashtags:{' '}
@@ -98,8 +95,6 @@ function Search() {
                       }): 'None'}
                     </div>
                     <hr />
-                    </div> */}
-                    <br />
                   </div>
                 )
               })}
