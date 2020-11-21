@@ -10,8 +10,9 @@ install:
   - cd client && npm install && cd ../
 
 script:
+  - npm install -g jest
   - npm run lint
-  - npm install jest -g
-  - npm run test:coveralls
+  - npm run test:coverage
+  #- npm run test::coveralls
 
 notifications: email:false
