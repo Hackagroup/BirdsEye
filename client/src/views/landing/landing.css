@@ -4,6 +4,8 @@ body {
     justify-content: center;
     background-image: url("../../assets/landscape.png");
     background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
     background-size: 1200px 1000px;
     width: auto;
 }
