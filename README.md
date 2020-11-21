@@ -1,5 +1,9 @@
 <p align="center"><a href="#" target="_blank"><img width="400"src="https://i.imgur.com/lb8GddO.png"></a></p>
 
+
+![Node.js CI](https://github.com/Hackagroup/BirdsEye/workflows/Node.js%20CI/badge.svg)
+
+
 <div align="center">
   <h2>BirdsEye, A closer look at the bigger picture</h2>
 

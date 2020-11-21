@@ -28,8 +28,8 @@
   "scripts": {
     "client:install": "cd client && npm install && cd ../",
     "test": "jest",
-    "test:watch":"jest --watch",
-    "test:coverage":"jest --coverage --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --passWithNoTests",
     "test:coveralls": "jest --coverage --passWithNoTests && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "server": "nodemon server.js",
     "client": "cd client && npm start",
