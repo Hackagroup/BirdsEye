@@ -76,6 +76,7 @@ function Dashboard() {
               .filter((tweet) => tweet.user.verified ) // Filter verified users
               .map((tweet) => {
                 const hashtags = tweet?.entities?.hashtags ?? []
+                const links = tweet?.entities?.urls ?? []
                 return (
                   <div key={tweet.id_str}>
                     <div>Text: {tweet.full_text}</div>
