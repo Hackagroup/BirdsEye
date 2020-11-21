@@ -17,10 +17,10 @@ function Dashboard() {
       const { tweet: createdTweet } = response
       console.log('Created tweet: ', createdTweet)
       const keywords = keyword_extractor.extract(createdTweet.text, {
-        language: "english",
+        language: 'english',
         remove_digits: true,
         return_changed_case: true,
-        remove_duplicates: true
+        remove_duplicates: true,
       })
       await searchtweet(keywords)
     } else {
@@ -33,10 +33,10 @@ function Dashboard() {
       searchQuery: sentence,
       result_type: 'popular',
       count: 30,
-      lang: "en",
-      tweet_mode:'extended',
-      include_entities: true
-      })
+      lang: 'en',
+      tweet_mode: 'extended',
+      include_entities: true,
+    })
     if (response.message == null) {
       const { tweets } = response
       const { statuses } = tweets
@@ -51,10 +51,10 @@ function Dashboard() {
       searchQuery: sentence,
       result_type: 'popular',
       count: 30,
-      lang: "en",
-      tweet_mode:'extended',
-      include_entities: true
-      })
+      lang: 'en',
+      tweet_mode: 'extended',
+      include_entities: true,
+    })
     if (response.message == null) {
       const { tweets } = response
       const { statuses } = tweets
@@ -87,17 +87,17 @@ function Dashboard() {
         )}
       </div>
       <p>Similar tweets for you to look @(Verified handles only)</p>
-            {similarTweets
-              .filter((tweet) => tweet.user.verified ) // Filter verified users
-              .map((tweet) => {
-                console.log(tweet)
-                return (
-                  <div key={tweet.id_str}>
-                   <Display props={tweet} />
-                    <hr />
-                  </div>
-                )
-            })}
+      {similarTweets
+        .filter((tweet) => tweet.user.verified) // Filter verified users
+        .map((tweet) => {
+          console.log(tweet)
+          return (
+            <div key={tweet.id_str}>
+              <Display props={tweet} />
+              <hr />
+            </div>
+          )
+        })}
     </>
   )
 }

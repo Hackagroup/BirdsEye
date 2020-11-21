@@ -1,6 +1,6 @@
 .Navbar {
   height: 92px;
-  background-color: #45A1E5;
+  background-color: #45a1e5;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,20 +31,20 @@
   margin-left: 53px;
   width: 319px;
   height: 40px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 25px;
   border: none;
   font-weight: 500;
   font-size: 28px;
   line-height: 38px;
   letter-spacing: -1.5px;
-  color: #A2A2A2;
+  color: #a2a2a2;
   outline: none;
   padding: 2px 15px;
 }
 
 .Navbar__search::placeholder {
-  color: #A1A1A1;
+  color: #a1a1a1;
 }
 
 .Navbar__link,
@@ -56,7 +56,7 @@
   font-size: 28px;
   line-height: 38px;
   letter-spacing: -1.5px;
-  color: #FFFDFD;
+  color: #fffdfd;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -87,6 +87,6 @@
   margin-right: 25px;
   margin-bottom: 4px;
   color: #000000;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 15px;
 }
