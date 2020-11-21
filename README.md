@@ -5,7 +5,7 @@
 
   <br>
   <a href="https://react-redux.js.org/" target="_blank"> <img src="https://www.clker.com/cliparts/N/0/4/q/4/R/react-redux.svg" alt="javascript" width="45" height="45"/> </a>
-  <a href="https://https://reactjs.org/" target="_blank"> <img src="https://material-ui.com/static/logo.png" alt="material-ui" width="40" height="40"/> </a>
+  <a href="https://material-ui.com/" target="_blank"> <img src="https://material-ui.com/static/logo.png" alt="material-ui" width="40" height="40"/> </a>
   <a href="https://www.figma.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a>
   <a href="https://travis-ci.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/travis-ci/travis-ci-icon.svg" alt="javascript" width="40" height="40"/> </a> 
   <a href="https://nodejs.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="javascript" width="40" height="40"/> </a>
@@ -107,4 +107,4 @@ Our project structure is as follows:
 
 ---
 
-**BirdsEye is Licensed under the MIT License.**
+BirdsEye is Licensed under the MIT License.
