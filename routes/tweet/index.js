@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const logger = require('../../utils/logger')
 const getTwitterClient = require('../../utils/getTwitterClient')
+const { Console } = require('winston/lib/winston/transports')
 
 /*
   @route: GET /tweet/
@@ -13,10 +14,10 @@ const getTwitterClient = require('../../utils/getTwitterClient')
 router.get('/', async (req, res) => {
   try {
     const client = getTwitterClient(req)
-    const { searchQuery, result_type, count } = req.query
+    const { searchQuery, result_type, count, lang } = req.query
     client.get(
       'search/tweets',
-      { q: searchQuery, result_type, count },
+      { q: searchQuery, result_type: result_type, count: count, lang: lang },
       function (err, tweets, response) {
         try {
           if (err) throw err
@@ -65,6 +66,7 @@ router.post('/', async (req, res) => {
       message: 'Unknown error occurred!',
     })
   }
+  
 })
 
 module.exports = router

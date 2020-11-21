@@ -12,7 +12,8 @@ function Search() {
     const response = await API.tweet.get('', {
       searchQuery: search,
       result_type: 'popular',
-      count: 20,
+      count: 30,
+      lang: "en"
     })
     if (response.message == null) {
       const { tweets } = response
