@@ -84,7 +84,7 @@ Our project structure is as follows:
 - **_.travis.yml_** : Travis-CI Configuration
 - **_package.json_** : All Node dependancies and scripts for testing & building
 - **_server.js_** : NodeJS Entry point
-- **_setup.sh_**: Shell file that aids for installing all dependancies and running app!
+- **_setup.sh_**: Shell file that aids for installing all dependancies, configuring environment and running app!
 
 <br>
 
