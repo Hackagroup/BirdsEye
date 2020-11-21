@@ -39,7 +39,7 @@ function Display(props){
   }
   let links =  ""
   if (links_n == 0){
-    links = "No Links"
+    links = ""
   } else{
     links = props.props.entities.urls.map((link)=>{
       return (link.expanded_url)
