@@ -22,6 +22,7 @@
     "prettier": "^2.1.2"
   },
   "scripts": {
+    "client:install":"cd client && npm install && cd ../",
     "test": "jest",
     "test:watch":"jest --watch",
     "test:coverage":"jest --coverage",
