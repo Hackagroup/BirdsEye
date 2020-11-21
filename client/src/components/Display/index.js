@@ -58,12 +58,12 @@ function Display(props){
       })
     }
   }
-  
+  console.log(tweet)
   return(
     <>
     <div id="box">
       <div className="display_block">
-          <div>Tweet Text: {tweet.full_text}</div>
+          <div>@{tweet.user.screen_name} tweeted: {tweet.full_text}</div>
           <div className="display_block_date"><b>{parseDate(tweet.created_at)}</b></div>
           <div>
             {hashtags.length > 0 ? hashtags.map((x) => ('#'+x.text)).join(' ') : ''}
