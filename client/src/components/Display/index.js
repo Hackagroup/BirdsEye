@@ -6,15 +6,16 @@ import './display.css'
 // temp1.props.entities.hashtags[0].text
 // "ATYCLB"
 
-function Display(props, hashtags, links, images){
+function Display(props){
   console.log(props)
   let entities = props.props.entities
   let hashtags_n = entities.hashtags.length
 
   let tweet = props.props
-  hashtags = props.hashtags
-  links = props.links
-  images = props.images
+  let hashtags = entities.hashtags
+  let links = entities.links
+  let images = entities.images
+
 
 
   function parseTags(hashtags){

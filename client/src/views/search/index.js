@@ -70,7 +70,7 @@ function Search() {
                 const images = tweet?.quoted_status?.extended_entities?.media ?? []
                 return (
                   <>
-                    <Display key={tweet.id_str} props={tweet} hashtags={hashtags} links={links} images={images}/>
+                    <Display key={tweet.id_str} props={tweet}/>
                     <br/>
                   </>
                 )
