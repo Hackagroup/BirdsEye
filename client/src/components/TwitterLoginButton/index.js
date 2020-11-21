@@ -1,10 +1,16 @@
 import React from 'react'
 import 'whatwg-fetch'
 import 'url-search-params-polyfill'
-import { Button } from '@material-ui/core'
+import 'fontsource-roboto';
+import { Button, Typography } from '@material-ui/core'
 import LockOpenIcon from '@material-ui/icons/LockOpen'
 import { makeStyles } from '@material-ui/core/styles'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import './TwitterLoginButton.css'
+import lightBlue from '@material-ui/core/colors/lightBlue';
+import cyan from '@material-ui/core/colors/cyan';
+import TwitterIcon from '@material-ui/icons/Twitter';
+
 
 function TwitterLoginButton(props) {
   const useStyles = makeStyles((theme) => ({
@@ -15,6 +21,12 @@ function TwitterLoginButton(props) {
 
   const classes = useStyles()
 
+  const theme = createMuiTheme({
+    palette: {
+      primary:  { 500: '#ffffff' },
+      secondary: cyan,
+    },
+  })
   function onButtonClick(e) {
     e.preventDefault()
     if (props.onClickCallback) props.onClickCallback()
@@ -131,17 +143,22 @@ function TwitterLoginButton(props) {
   }
 
   return (
-    <Button
-      variant="contained"
-      color="primary"
-      size="large"
-      className={classes.button}
-      onClick={onButtonClick}
-      startIcon={<LockOpenIcon />}
-      disabled={props.disabled}
-    >
-      {props.text}
-    </Button>
+    <MuiThemeProvider theme={theme}>
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        className={classes.button}
+        onClick={onButtonClick}
+        startIcon={<TwitterIcon style={{ color: '#00acee' }} />}
+        disabled={props.disabled}
+        textSizeLarge
+      >
+     
+          {props.text}
+        
+      </Button>
+    </MuiThemeProvider>
   )
 }
 
