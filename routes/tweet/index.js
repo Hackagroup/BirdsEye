@@ -13,10 +13,15 @@ const getTwitterClient = require('../../utils/getTwitterClient')
 router.get('/', async (req, res) => {
   try {
     const client = getTwitterClient(req)
-    const { searchQuery, result_type, count, lang, tweet_mode } = req.query
+    const { searchQuery, result_type, count, lang, tweet_mode, include_entities } = req.query
     client.get(
       'search/tweets',
-      { q: searchQuery, result_type: result_type, count: count, lang: lang, tweet_mode },
+      { q: searchQuery, 
+        result_type: result_type,
+         count: count, 
+         lang: lang, 
+         tweet_mode: tweet_mode, 
+         include_entities: include_entities },
       function (err, tweets, response) {
         try {
           if (err) throw err
