@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import keyword_extractor from 'keyword-extractor'
 import API from '../../api'
 import './dashboard.css'
+import Display from '../../components/Display'
 
 function Dashboard() {
   const [tweetContent, setTweetContent] = useState('')
@@ -33,7 +34,26 @@ function Dashboard() {
       result_type: 'popular',
       count: 30,
       lang: "en",
-      tweet_mode:'extended'
+      tweet_mode:'extended',
+      include_entities: true
+      })
+    if (response.message == null) {
+      const { tweets } = response
+      const { statuses } = tweets
+      console.log(tweets)
+      setSimilarTweets(statuses ?? [])
+    }
+    setLoading(false)
+  }
+
+  async function searchInfographic(sentence) {
+    const response = await API.tweet.get('', {
+      searchQuery: sentence,
+      result_type: 'popular',
+      count: 30,
+      lang: "en",
+      tweet_mode:'extended',
+      include_entities: true
       })
     if (response.message == null) {
       const { tweets } = response
@@ -70,14 +90,10 @@ function Dashboard() {
             {similarTweets
               .filter((tweet) => tweet.user.verified ) // Filter verified users
               .map((tweet) => {
-                const hashtags = tweet?.entities?.hashtags ?? []
+                console.log(tweet)
                 return (
                   <div key={tweet.id_str}>
-                    <div>Text: {tweet.full_text}</div>
-                    <div>Created at: {tweet.created_at}</div>
-                    <div>
-                      Hashtags: {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
-                    </div>
+                   <Display props={tweet} />
                     <hr />
                   </div>
                 )

@@ -17,7 +17,10 @@
 <br>
 <div align="center">
 
-![Node.js CI](https://github.com/Hackagroup/BirdsEye/workflows/Node.js%20CI/badge.svg) Travis-CI Badge Coming
+  ![Node.js CI](https://github.com/Hackagroup/BirdsEye/workflows/Node.js%20CI/badge.svg) 
+    <a href="#"><img src="https://img.shields.io/npm/l/vue.svg?sanitize=true" alt="License"></a>
+    [<img src="https://img.shields.io/badge/slack-@hackagroup-yellow.svg?logo=slack">](https://join.slack.com/t/hackagroupworkspace/shared_invite/zt-jdeuctxd-Zy5QQ6XIrM5xXPyLSqqzqQ)
+    [![Build Status](https://travis-ci.com/Hackagroup/BirdsEye.svg?branch=main)](https://travis-ci.com/Hackagroup/BirdsEye)
 </div>
 <br>
 <br>

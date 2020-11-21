@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import API from '../../api'
 import { Helmet } from 'react-helmet'
+import keyword_extractor from 'keyword-extractor'
 import Display from '../../components/Display'
 import { Typography } from '@material-ui/core'
 import 'fontsource-roboto';
@@ -13,12 +14,24 @@ function Search() {
 
   async function handleSubmit() {
     setLoading(true)
+    console.log(keyword_extractor.extract(search,{
+      language:"english",
+      remove_digits: true,
+      return_changed_case:true,
+      remove_duplicates: true
+    }))
     const response = await API.tweet.get('', {
-      searchQuery: search,
+      searchQuery: keyword_extractor.extract(search,{
+        language:"english",
+        remove_digits: true,
+        return_changed_case:true,
+        remove_duplicates: true
+      }),
       result_type: 'popular',
       count: 30,
       lang: "en",
-      tweet_mode: "extended"
+      tweet_mode: "extended",
+      include_entities: true
     })
     if (response.message == null) {
     const { tweets } = response
@@ -48,22 +61,15 @@ function Search() {
             </button>
             <hr />
             <p>Search results (Verified handles only)</p>
-            <div class="all_searches">
+            <div className="all_searches">
             {tweets
               .filter((tweet) => tweet.user.verified) // Filter verified users
               .map((tweet) => {
-                const hashtags = tweet?.entities?.hashtags ?? []
                 return (
-                  <div key={tweet.id_str}>
-                    <Display props={tweet} />
-                    {/* <div>Text: {tweet.text}</div>
-                    <div><b>Created at: {tweet.created_at}</b></div>
-                    <div>
-                      Hashtags:{' '}
-                      {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
-                    </div> */}
-                    <br />
-                  </div>
+                  <>
+                    <Display key={tweet.id_str} props={tweet}/>
+                    <br/>
+                  </>
                 )
               })}
              </div>
