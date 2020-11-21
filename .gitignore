@@ -101,7 +101,6 @@ dist
 
 # Node/React
 /node_modules
-package-lock.json
 .DS_STORE
 
 .env
