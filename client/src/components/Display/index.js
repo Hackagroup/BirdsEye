@@ -6,19 +6,30 @@ import './display.css'
 // temp1.props.entities.hashtags[0].text
 // "ATYCLB"
 
-function Display(props){
+function Display(props, hashtags, links, images){
   console.log(props)
   let entities = props.props.entities
   let hashtags_n = entities.hashtags.length
 
+  let tweet = props.props
+  hashtags = props.hashtags
+  links = props.links
+  images = props.images
+
+
   function parseTags(hashtags){
     let s = "";
-    console.log(hashtags)
     for(const tag in hashtags){
       s+=("#"+hashtags[tag].text)
       s+="  "
     }
     return s
+  }
+
+  function parseDate(date){
+    let __ = date.substring(4,8)
+    let _ = date.substring(8,11)
+    return __ + " " + _
   }
 
   let x = <div></div>
@@ -30,10 +41,30 @@ function Display(props){
   return(
     <>
      <div className="display_block">
-        <div class="display_text">
-          {props.props.full_text} {x}
+     
+        <div>{tweet.full_text}</div>
+        <div className="display_block_date"><b>{parseDate(tweet.created_at)}</b></div>
+        <div>
+          {hashtags.length > 0 ? hashtags.map((x) => ('#'+x.text)).join(' ') : 'None'}
         </div>
-     </div>
+        {/* <div>  
+          Tweet Links:{' '}
+          {links.length > 0 ? links.map((x) =>{
+            return (
+              <a target="_blank" href={x.expanded_url}>{x.expanded_url}</a>
+            )
+          }): 'None'}
+        </div> */}
+        {/* <div>
+          Images :{' '}
+          {images.length > 0 ? images.map((x) =>{
+            console.log(x.media_url_https)
+            return (
+              <img width="500px" src={x.media_url_https}/>
+            )
+          }): 'None'}
+        </div> */}
+      </div> 
     </> 
   )
 }

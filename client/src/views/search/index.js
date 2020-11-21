@@ -69,33 +69,10 @@ function Search() {
                 const links = tweet?.entities?.urls ?? []
                 const images = tweet?.quoted_status?.extended_entities?.media ?? []
                 return (
-                  <div key={tweet.id_str}>
-                    <Display props={tweet} />
-                     <div>Text: {tweet.text}</div>
-                    <div><b>Created at: {tweet.created_at}</b></div>
-                    <div>
-                      Hashtags:{' '}
-                      {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
-                    </div>
-                    <div>
-                      Tweet Links:{' '}
-                      {links.length > 0 ? links.map((x) =>{
-                        return (
-                          <a target="_blank" href={x.expanded_url}>{x.expanded_url}</a>
-                        )
-                      }): 'None'}
-                    </div>
-                    <div>
-                      Images :{' '}
-                      {images.length > 0 ? images.map((x) =>{
-                        console.log(x.media_url_https)
-                        return (
-                          <img width="500px" src={x.media_url_https}/>
-                        )
-                      }): 'None'}
-                    </div>
-                    <hr />
-                  </div>
+                  <>
+                    <Display key={tweet.id_str} props={tweet} hashtags={hashtags} links={links} images={images}/>
+                    <br/>
+                  </>
                 )
               })}
              </div>
