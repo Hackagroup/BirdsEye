@@ -1,0 +1,28 @@
+.display_block{
+  width: 497px;
+  height: 162px;
+
+  background: #FFFFFF;
+  border: 1px solid #A1A1A1;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.display_text{
+  /* position: absolute;
+  width: 460px;
+  height: 128px;
+  left: 505px;
+  top: 177px; */
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  /* letter-spacing: -1.5px; */
+
+  color: #000000;
+}

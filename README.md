@@ -1,10 +1,11 @@
 <p align="center"><a href="#" target="_blank"><img width="400"src="https://i.imgur.com/lb8GddO.png"></a></p>
 
+
 <div align="center">
   <h2>BirdsEye, A closer look at the bigger picture</h2>
 
   <br>
-  <a href="https://react-redux.js.org/" target="_blank"> <img src="https://www.clker.com/cliparts/N/0/4/q/4/R/react-redux.svg" alt="javascript" width="45" height="45"/> </a>
+  <a href="https://reactjs.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="javascript" width="45" height="45"/> </a>
   <a href="https://material-ui.com/" target="_blank"> <img src="https://material-ui.com/static/logo.png" alt="material-ui" width="40" height="40"/> </a>
   <a href="https://www.figma.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a>
   <a href="https://travis-ci.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/travis-ci/travis-ci-icon.svg" alt="javascript" width="40" height="40"/> </a> 
@@ -12,6 +13,11 @@
   <a href="https://expressjs.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" alt="javascript" width="40" height="40"/> </a> 
   <a href="https://code.visualstudio.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-icon.svg" alt="visual code" width="40" height="40"/> </a>
   
+</div>
+<br>
+<div align="center">
+
+![Node.js CI](https://github.com/Hackagroup/BirdsEye/workflows/Node.js%20CI/badge.svg) Travis-CI Badge Coming
 </div>
 <br>
 <br>
