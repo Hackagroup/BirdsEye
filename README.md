@@ -1,4 +1,4 @@
-<p align="center"><a href="#" target="_blank"><img width="200"src="https://i.imgur.com/GlIVUxo.png"></a></p>
+<p align="center"><a href="#" target="_blank"><img width="400"src="https://i.imgur.com/lb8GddO.png"></a></p>
 
 This Twitter is about generating motivating tweets. More Description about this app will be posted later on the app development.
 <br>
@@ -14,7 +14,7 @@ Gif of web app coming soon
 
 <p>In order to run, use:</p>
 
-```
+```sh
 # Clone Repository
 git clone https://github.com/Hackagroup/Twittive
 cd Twittive
