@@ -1,36 +1,33 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
+import keyword_extractor from 'keyword-extractor'
 import API from '../../api'
 import './dashboard.css'
-import keyword_extractor from 'keyword-extractor'
 
 function Dashboard() {
   const [tweetContent, setTweetContent] = useState('')
   const [loading, setLoading] = useState(false)
-  const [tweet, setTweet] = useState('')
-  const [tweets, setTweets] = useState([])
+  const [similarTweets, setSimilarTweets] = useState([])
 
   async function handleSubmit() {
     setLoading(true)
     const response = await API.tweet.post({ tweetBody: tweetContent })
     if (response.message == null) {
-      const { tweet } = response
-      console.log(tweet)
-      setTweet(tweet)
-      const keywords = keyword_extractor.extract(tweet.text,{
-        language:"english",
+      const { tweet: createdTweet } = response
+      console.log('Created tweet: ', createdTweet)
+      const keywords = keyword_extractor.extract(createdTweet.text, {
+        language: "english",
         remove_digits: true,
-        return_changed_case:true,
+        return_changed_case: true,
         remove_duplicates: true
       })
-      console.log(keywords)
       await searchtweet(keywords)
+    } else {
+      setLoading(false)
     }
-    setLoading(false)
   }
 
   async function searchtweet(sentence) {
-    setLoading(true)
     const response = await API.tweet.get('', {
       searchQuery: sentence,
       result_type: 'popular',
@@ -42,7 +39,7 @@ function Dashboard() {
       const { tweets } = response
       const { statuses } = tweets
       console.log(tweets)
-      setTweets(statuses ?? [])
+      setSimilarTweets(statuses ?? [])
     }
     setLoading(false)
   }
@@ -69,9 +66,8 @@ function Dashboard() {
           </>
         )}
       </div>
-      <div>Text: {tweet.text}</div>
       <p>Similar tweets for you to look @(Verified handles only)</p>
-            {tweets
+            {similarTweets
               .filter((tweet) => tweet.user.verified ) // Filter verified users
               .map((tweet) => {
                 const hashtags = tweet?.entities?.hashtags ?? []

@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const logger = require('../../utils/logger')
 const getTwitterClient = require('../../utils/getTwitterClient')
-const { Console } = require('winston/lib/winston/transports')
 
 /*
   @route: GET /tweet/
