@@ -1,9 +1,6 @@
 <p align="center"><a href="#" target="_blank"><img width="400"src="https://i.imgur.com/lb8GddO.png"></a></p>
 
 
-![Node.js CI](https://github.com/Hackagroup/BirdsEye/workflows/Node.js%20CI/badge.svg)
-
-
 <div align="center">
   <h2>BirdsEye, A closer look at the bigger picture</h2>
 
@@ -16,6 +13,11 @@
   <a href="https://expressjs.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" alt="javascript" width="40" height="40"/> </a> 
   <a href="https://code.visualstudio.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-icon.svg" alt="visual code" width="40" height="40"/> </a>
   
+</div>
+<br>
+<div align="center">
+
+![Node.js CI](https://github.com/Hackagroup/BirdsEye/workflows/Node.js%20CI/badge.svg) Travis-CI Badge Coming
 </div>
 <br>
 <br>
