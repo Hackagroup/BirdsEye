@@ -1,7 +1,24 @@
-<p align="center"><a href="#" target="_blank"><img width="200"src="https://i.imgur.com/GlIVUxo.png"></a></p>
+<p align="center"><a href="#" target="_blank"><img width="400"src="https://i.imgur.com/lb8GddO.png"></a></p>
 
-This Twitter is about generating motivating tweets. More Description about this app will be posted later on the app development.
+<div align="center">
+  <h2>BirdsEye, A closer look at the bigger picture</h2>
+
+  <br>
+  <a href="https://https://reactjs.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="javascript" width="40" height="40"/> </a>
+  <a href="https://https://reactjs.org/" target="_blank"> <img src="https://material-ui.com/static/logo.png" alt="material-ui" width="40" height="40"/> </a>
+  <a href="https://www.figma.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a>
+  <a href="https://nodejs.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="javascript" width="40" height="40"/> </a>
+  <a href="https://nodejs.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" alt="javascript" width="40" height="40"/> </a> 
+  <a href="https://code.visualstudio.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-icon.svg" alt="visual code" width="40" height="40"/> </a>
+  
+</div>
 <br>
+<br>
+
+# What it does
+
+BirdsEye lets you look at other simmilar tweets which can give you a sense of the other side of the topic. Most often than not in today's age people don't like to view the other persons side or even worse, never do get the chance to see the other side. BirdsEye combats this by notifiying the user about tweets that relates to the tweet he/she just sent. This can give the user a broader view of the topic or as we like to call it a Bird Eye's view ;)
+
 <br>
 
 # Usage
@@ -9,12 +26,13 @@ This Twitter is about generating motivating tweets. More Description about this 
 Gif of web app coming soon
 
 <br>
+<br>
 
 # Developers
 
 <p>In order to run, use:</p>
 
-```
+```sh
 # Clone Repository
 git clone https://github.com/Hackagroup/Twittive
 cd Twittive
