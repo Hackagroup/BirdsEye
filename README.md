@@ -4,7 +4,7 @@
   <h2>BirdsEye, A closer look at the bigger picture</h2>
 
   <br>
-  <a href="https://react-redux.js.org/" target="_blank"> <img src="https://www.clker.com/cliparts/N/0/4/q/4/R/react-redux.svg" alt="javascript" width="40" height="40"/> </a>
+  <a href="https://react-redux.js.org/" target="_blank"> <img src="https://www.clker.com/cliparts/N/0/4/q/4/R/react-redux.svg" alt="javascript" width="45" height="45"/> </a>
   <a href="https://https://reactjs.org/" target="_blank"> <img src="https://material-ui.com/static/logo.png" alt="material-ui" width="40" height="40"/> </a>
   <a href="https://www.figma.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a>
   <a href="https://travis-ci.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/travis-ci/travis-ci-icon.svg" alt="javascript" width="40" height="40"/> </a> 
@@ -18,7 +18,7 @@
 
 # What it does
 
-BirdsEye lets you look at other simmilar tweets which can give you a sense of the other side of the topic. Most often than not in today's age people don't like to view the other persons side or even worse, never do get the chance to see the other side. BirdsEye combats this by notifiying the user about tweets that relates to the tweet he/she just sent. This can give the user a broader view of the topic or as we like to call it a Bird Eye's view ;)
+BirdsEye lets you look at other simmilar tweets which can give you a sense of the other side of the topic. Most often than not in today's age people don't like to view the other persons side or even worse, never do get the chance to see the other side. BirdsEye combats this by notifiying the user about tweets that relates to the tweet he/she just sent. This can give the user a broader view of the topic or as we like to call it a Bird Eye's view 😉
 
 <br>
 
@@ -26,7 +26,6 @@ BirdsEye lets you look at other simmilar tweets which can give you a sense of th
 
 Gif of web app coming soon
 
-<br>
 <br>
 
 # Prototype
@@ -38,8 +37,6 @@ Gif of web app coming soon
 <a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0"><img src="https://i.imgur.com/s5uFHlV.png" width="400"></a>
 <a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0"><img src="https://i.imgur.com/YzrUlHV.png" width="400"/></a>
 
-<br>
-<br>
 <br>
 
 # Developers
@@ -58,7 +55,6 @@ bash setup.sh
 
 <b>IMPORTANT : React takes a while to start! Don't turn off in the middle of `npm start`.</b>
 
-<br>
 <br>
 
 # Project Structure
