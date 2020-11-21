@@ -36,7 +36,8 @@ function Dashboard() {
       result_type: 'popular',
       count: 30,
       lang: "en",
-      tweet_mode:'extended'
+      tweet_mode:'extended',
+      include_entities: true
       })
     if (response.message == null) {
       const { tweets } = response
@@ -81,6 +82,14 @@ function Dashboard() {
                     <div>Created at: {tweet.created_at}</div>
                     <div>
                       Hashtags: {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
+                    </div>
+                    <div>
+                      Tweet Links:{' '}
+                      {links.length > 0 ? links.map((x) =>{
+                        return (
+                          <a target="_blank" href={x.expanded_url}>{x.expanded_url}</a>
+                        )
+                      }): 'None'}
                     </div>
                     <hr />
                   </div>

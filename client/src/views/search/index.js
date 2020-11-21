@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import API from '../../api'
 import { Helmet } from 'react-helmet'
+import keyword_extractor from 'keyword-extractor'
 
 function Search() {
   const [search, setSearch] = useState('')
@@ -9,12 +10,24 @@ function Search() {
 
   async function handleSubmit() {
     setLoading(true)
+    console.log(keyword_extractor.extract(search,{
+      language:"english",
+      remove_digits: true,
+      return_changed_case:true,
+      remove_duplicates: true
+    }))
     const response = await API.tweet.get('', {
-      searchQuery: search,
+      searchQuery: keyword_extractor.extract(search,{
+        language:"english",
+        remove_digits: true,
+        return_changed_case:true,
+        remove_duplicates: true
+      }),
       result_type: 'popular',
       count: 30,
       lang: "en",
-      tweet_mode: "extended"
+      tweet_mode: "extended",
+      include_entities: true
     })
     if (response.message == null) {
       const { tweets } = response
@@ -46,6 +59,8 @@ function Search() {
               .filter((tweet) => tweet.user.verified) // Filter verified users
               .map((tweet) => {
                 const hashtags = tweet?.entities?.hashtags ?? []
+                const links = tweet?.entities?.urls ?? []
+                console.log(links);
                 return (
                   <div key={tweet.id_str}>
                     <div>Text: {tweet.full_text}</div>
@@ -53,6 +68,14 @@ function Search() {
                     <div>
                       Hashtags:{' '}
                       {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
+                    </div>
+                    <div>
+                      Tweet Links:{' '}
+                      {links.length > 0 ? links.map((x) =>{
+                        return (
+                          <a target="_blank" href={x.expanded_url}>{x.expanded_url}</a>
+                        )
+                      }): 'None'}
                     </div>
                     <hr />
                   </div>
