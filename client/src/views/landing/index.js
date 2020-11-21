@@ -8,11 +8,22 @@ import TwitterLogin from 'react-twitter-auth/lib/react-twitter-auth-component.js
 import TwitterLogin2 from 'react-twitter-login'
 import './landing.css'
 import logo from '../../assets/logo-white.png'
+import { Button } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles';
+import SaveIcon from '@material-ui/icons/Save';
+
 
 function Login() {
   const user = useSelector((state) => state.user)
   const dispatch = useDispatch()
   const { isAuthenticated } = user
+  const useStyles = makeStyles((theme) => ({
+    button: {
+      margin: theme.spacing(1),
+    },
+  }));
+
+  const classes = useStyles();
 
   function handleFailure(err) {
     console.log(err)
@@ -40,6 +51,7 @@ function Login() {
     console.log(data)
   }
 
+
   return (
     <>
       <Helmet>
@@ -55,17 +67,27 @@ function Login() {
           <h3>"A closer look at the big picture"</h3>
           <br></br>
           <br></br>
-          {/* <TwitterLogin
+          <TwitterLogin
               loginUrl={API_ENDPOINTS.LOGIN}
               onFailure={handleFailure}
               onSuccess={handleSuccess}
               requestTokenUrl={API_ENDPOINTS.REQUEST_TOKEN_URL}
-            /> */}
-          <TwitterLogin2
+              children={
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    className={classes.button}
+                    startIcon={<SaveIcon />}
+                  ></Button>
+              }
+            >
+            </TwitterLogin>
+          {/* <TwitterLogin2
             authCallback={authHandler}
             consumerKey={process.env.TWITTER_CONSUMER_API_KEY}
             consumerSecret={process.env.TWITTER_CONSUMER_API_SECRET}
-          />
+          /> */}
         </div>
       </section>
     </>

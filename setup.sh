@@ -12,7 +12,10 @@ elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
     echo "RUNNING UNDER Windows"
 fi
 
-npm install
-cd client && npm install
-cd ../ 
-npm start # Start the local server  
+# npm install
+# cd client && npm install
+# cd ../ 
+echo "Is this development or production? (d for dev, p for prod)"
+read node_env
+echo node_env
+# npm start # Start the local server  
