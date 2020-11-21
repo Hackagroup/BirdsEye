@@ -65,11 +65,14 @@ function Search() {
             {tweets
               .filter((tweet) => tweet.user.verified) // Filter verified users
               .map((tweet) => {
+                const hashtags = tweet?.entities?.hashtags ?? []
+                const links = tweet?.entities?.urls ?? []
+                const images = tweet?.quoted_status?.extended_entities?.media ?? []
                 return (
-                  <div key={tweet.id_str}>
-                    <Display props={tweet} />
-                    <hr />
-                  </div>
+                  <>
+                    <Display key={tweet.id_str} props={tweet}/>
+                    <br/>
+                  </>
                 )
               })}
              </div>
