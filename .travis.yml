@@ -7,7 +7,7 @@ node_js:
 
 install:
   - npm ci
-  - cd client && npm install && cd ../  
+  - cd client && npm install && cd ../
 
 script:
   - npm run lint

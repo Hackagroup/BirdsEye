@@ -8,7 +8,6 @@ import TwitterLoginButton from '../../components/TwitterLoginButton'
 import './landing.css'
 import logo from '../../assets/logo-white.png'
 
-
 function Login() {
   const [loading, setLoading] = useState(false)
   const [errMessage, setErrMessage] = useState('')
