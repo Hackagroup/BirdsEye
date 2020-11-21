@@ -13,7 +13,7 @@ function Dashboard() {
     setLoading(true)
     const response = await API.tweet.post({ tweetBody: tweetContent })
     if (response.message == null) {
-      const { createdTweet } = response
+      const { tweet: createdTweet } = response
       console.log('Created tweet: ', createdTweet)
       const keywords = keyword_extractor.extract(createdTweet.text, {
         language: "english",
