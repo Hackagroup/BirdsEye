@@ -11,6 +11,7 @@ install:
 
 script:
   - npm run lint
+  - npm install jest -g
   - npm run test:coveralls
 
 notifications: email:false
