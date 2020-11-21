@@ -1,5 +1,7 @@
 // Load environment variables
-require('dotenv-safe').config()
+require('dotenv-safe').config({
+  allowEmptyValues:true
+})
 
 const express = require('express')
 const compression = require('compression')
