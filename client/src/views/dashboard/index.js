@@ -33,7 +33,8 @@ function Dashboard() {
       result_type: 'popular',
       count: 30,
       lang: "en",
-      tweet_mode:'extended'
+      tweet_mode:'extended',
+      include_entities: true
       })
     if (response.message == null) {
       const { tweets } = response
@@ -71,12 +72,31 @@ function Dashboard() {
               .filter((tweet) => tweet.user.verified ) // Filter verified users
               .map((tweet) => {
                 const hashtags = tweet?.entities?.hashtags ?? []
+                const links = tweet?.entities?.urls ?? []
+                const images = tweet?.quoted_status?.extended_entities?.media ?? []
                 return (
                   <div key={tweet.id_str}>
                     <div>Text: {tweet.full_text}</div>
                     <div>Created at: {tweet.created_at}</div>
                     <div>
                       Hashtags: {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
+                    </div>
+                    <div>
+                      Tweet Links:{' '}
+                      {links.length > 0 ? links.map((x) =>{
+                        return (
+                          <a target="_blank" href={x.expanded_url}>{x.expanded_url}</a>
+                        )
+                      }): 'None'}
+                    </div>
+                    <div>
+                      Images :{' '}
+                      {images.length > 0 ? images.map((x) =>{
+                        console.log(x.media_url_https)
+                        return (
+                          <img width="500px" src={x.media_url_https}/>
+                        )
+                      }): 'None'}
                     </div>
                     <hr />
                   </div>
