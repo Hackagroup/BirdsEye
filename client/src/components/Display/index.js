@@ -7,7 +7,6 @@ import './display.css'
 // "ATYCLB"
 
 function Display(props){
-  console.log(props)
   let entities = props.props.entities
   let hashtags_n = entities.hashtags.length
 
@@ -15,8 +14,6 @@ function Display(props){
   let hashtags = entities.hashtags
   let links_n = entities.urls.length
   let images_n = props.props.quoted_status
-  console.log(images_n)
-
 
 
   function parseTags(hashtags){
@@ -53,7 +50,6 @@ function Display(props){
   if (typeof images_n === "undefined" || images_n ==undefined || images_n === void(0)){
     images = ""
   } else{
-    console.log( "asdasd"+images_n.extended_entities);
     if(images_n.extended_entities != null ||
         typeof images_n.extended_entities !== "undefined" ||
         images_n.extended_entities !== void(0)){
@@ -67,11 +63,10 @@ function Display(props){
     <>
     <div id="box">
       <div className="display_block">
-      
           <div>Tweet Text: {tweet.full_text}</div>
           <div className="display_block_date"><b>{parseDate(tweet.created_at)}</b></div>
           <div>
-            {hashtags.length > 0 ? hashtags.map((x) => ('#'+x.text)).join(' ') : 'None'}
+            {hashtags.length > 0 ? hashtags.map((x) => ('#'+x.text)).join(' ') : ''}
           </div>
           <a target="_blank" href={links}>{links}</a>
           <img class="images" src={images}/>
