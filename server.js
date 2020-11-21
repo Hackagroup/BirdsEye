@@ -1,5 +1,7 @@
 // Load environment variables
-require('dotenv-safe').config()
+require('dotenv-safe').config({
+  allowEmptyValues: true,
+})
 
 const express = require('express')
 const compression = require('compression')
@@ -27,7 +29,7 @@ app.use(bodyParser.json())
 app.use(routes)
 
 app.get('/', (req, res) => {
-  res.status(404).send('Welcome to Twittive!')
+  res.status(404).send('Welcome to BirdsEye!')
 })
 
 // Any undefined route

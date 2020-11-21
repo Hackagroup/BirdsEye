@@ -7,11 +7,11 @@ node_js:
 
 install:
   - npm ci
-  - cd client && npm install
+  - cd client && npm install && cd ../
 
 script:
   - npm run lint
-  - npm run test::coveralls
+  - npm install jest -g
+  - npm run test:coveralls
 
-notifications:
-  email:false
+notifications: email:false
