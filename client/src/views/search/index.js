@@ -48,7 +48,7 @@ function Search() {
             </button>
             <hr />
             <p>Search results (Verified handles only)</p>
-            <div class="all_searches">
+            <div className="all_searches">
             {tweets
               .filter((tweet) => tweet.user.verified) // Filter verified users
               .map((tweet) => {
