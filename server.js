@@ -1,6 +1,6 @@
 // Load environment variables
 require('dotenv-safe').config({
-  allowEmptyValues:true
+  allowEmptyValues: true,
 })
 
 const express = require('express')

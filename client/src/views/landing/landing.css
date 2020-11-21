@@ -1,20 +1,19 @@
-
-
-h1, h3 {
-    color: white;
+h1,
+h3 {
+  color: white;
 }
 
 hr {
-    background-color: white;
-    height: 2px;
-    width: 250px;
+  background-color: white;
+  height: 2px;
+  width: 250px;
 }
 
 #panel {
-    background-color: #45A1E5;
-    border-radius: 15px;
-    text-align: center;
-    width: 400px;
-    height: 400px;
-    margin-top: 100px;
+  background-color: #45a1e5;
+  border-radius: 15px;
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  margin-top: 10%;
 }

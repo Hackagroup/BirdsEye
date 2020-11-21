@@ -40,7 +40,7 @@ function App() {
           {/* Default route */}
           <Route component={Landing} />
         </Switch>
-        <Background/>
+        <Background />
       </Router>
     </Provider>
   )

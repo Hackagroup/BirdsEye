@@ -48,11 +48,7 @@ router.post('/', async (req, res) => {
   try {
     const client = getTwitterClient(req)
     const { tweetBody } = req.body
-    client.post('statuses/update', { status: tweetBody }, function (
-      error,
-      tweet,
-      response
-    ) {
+    client.post('statuses/update', { status: tweetBody }, function (error, tweet, response) {
       try {
         if (error) throw error
         return res.status(200).json({ tweet })

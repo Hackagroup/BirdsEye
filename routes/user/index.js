@@ -12,11 +12,11 @@ const getTwitterClient = require('../../utils/getTwitterClient')
 
 router.get('/:userId', async (req, res) => {
   try {
-    const { userId } = req.params;
+    const { userId } = req.params
     const client = getTwitterClient(req)
-    // 
+    //
     // Fetch user data from twitter api here
-    // 
+    //
   } catch (err) {
     logger.error(err.stack ? err.stack : JSON.stringify(err))
     return res.status(400).json({

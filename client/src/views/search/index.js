@@ -49,12 +49,13 @@ function Search() {
                     <div>Text: {tweet.text}</div>
                     <div>Created at: {tweet.created_at}</div>
                     <div>
-                      Hashtags: {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
+                      Hashtags:{' '}
+                      {hashtags.length > 0 ? hashtags.map((x) => x.text).join(', ') : 'None'}
                     </div>
                     <hr />
                   </div>
                 )
-            })}
+              })}
           </>
         )}
       </div>
