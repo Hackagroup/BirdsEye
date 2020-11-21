@@ -77,6 +77,7 @@ function Dashboard() {
               .map((tweet) => {
                 const hashtags = tweet?.entities?.hashtags ?? []
                 const links = tweet?.entities?.urls ?? []
+                const images = tweet?.quoted_status?.extended_entities?.media ?? []
                 return (
                   <div key={tweet.id_str}>
                     <div>Text: {tweet.full_text}</div>
@@ -89,6 +90,15 @@ function Dashboard() {
                       {links.length > 0 ? links.map((x) =>{
                         return (
                           <a target="_blank" href={x.expanded_url}>{x.expanded_url}</a>
+                        )
+                      }): 'None'}
+                    </div>
+                    <div>
+                      Images :{' '}
+                      {images.length > 0 ? images.map((x) =>{
+                        console.log(x.media_url_https)
+                        return (
+                          <img width="500px" src={x.media_url_https}/>
                         )
                       }): 'None'}
                     </div>
