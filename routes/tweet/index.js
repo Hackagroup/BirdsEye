@@ -14,10 +14,10 @@ const { Console } = require('winston/lib/winston/transports')
 router.get('/', async (req, res) => {
   try {
     const client = getTwitterClient(req)
-    const { searchQuery, result_type, count, lang } = req.query
+    const { searchQuery, result_type, count, lang, tweet_mode } = req.query
     client.get(
       'search/tweets',
-      { q: searchQuery, result_type: result_type, count: count, lang: lang },
+      { q: searchQuery, result_type: result_type, count: count, lang: lang, tweet_mode },
       function (err, tweets, response) {
         try {
           if (err) throw err

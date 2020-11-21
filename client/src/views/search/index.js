@@ -13,7 +13,8 @@ function Search() {
       searchQuery: search,
       result_type: 'popular',
       count: 30,
-      lang: "en"
+      lang: "en",
+      tweet_mode: "extended"
     })
     if (response.message == null) {
       const { tweets } = response
@@ -47,7 +48,7 @@ function Search() {
                 const hashtags = tweet?.entities?.hashtags ?? []
                 return (
                   <div key={tweet.id_str}>
-                    <div>Text: {tweet.text}</div>
+                    <div>Text: {tweet.full_text}</div>
                     <div>Created at: {tweet.created_at}</div>
                     <div>
                       Hashtags:{' '}
