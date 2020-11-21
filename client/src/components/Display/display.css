@@ -1,5 +1,4 @@
-
-#box{
+#box {
   width: 100%;
   height: 100%;
 
@@ -8,7 +7,7 @@
   justify-content: center;
 }
 
-.display_block{
+.display_block {
   display: flex;
   flex-direction: column;
   justify-self: center;
@@ -16,35 +15,35 @@
   width: 50%;
   height: 50%;
 
-  background: #FFFFFF;
-  border: 1px solid #A1A1A1;
+  background: #ffffff;
+  border: 1px solid #a1a1a1;
   box-sizing: border-box;
   border-radius: 15px;
 }
 
-.display_text{
+.display_text {
+  position: absolute;
+  width: 460px;
+  height: 128px;
+  left: 505px;
+  /* top: 177px; */
 
-position: absolute;
-width: 460px;
-height: 128px;
-left: 505px;
-/* top: 177px; */
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  flex-direction: column;
+  align-items: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  letter-spacing: -1.5px;
+  letter-spacing: -1.5px;
 
-font-family: Open Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 24px;
-line-height: 33px;
-flex-direction: column;
-align-items: center;	align-items: center;
-justify-content: center;
-width: 100%;
-letter-spacing: -1.5px;	letter-spacing: -1.5px;
+  color: #000000;
 
-color: #000000;
-
-
-/* font-family: Open Sans;
+  /* font-family: Open Sans;
 font-style: normal;
 font-weight: normal;
 font-size: 20px;
@@ -56,12 +55,11 @@ letter-spacing: -1.5px;
 color: #000000; */
 }
 
-
-.display_block_date{
-  float:right;
-  margin:10px;
+.display_block_date {
+  float: right;
+  margin: 10px;
 }
 
-.images{
+.images {
   width: 30%;
-} 	
+}

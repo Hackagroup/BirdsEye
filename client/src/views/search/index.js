@@ -4,8 +4,7 @@ import { Helmet } from 'react-helmet'
 import keyword_extractor from 'keyword-extractor'
 import Display from '../../components/Display'
 import { Typography } from '@material-ui/core'
-import 'fontsource-roboto';
-
+import 'fontsource-roboto'
 
 function Search() {
   const [search, setSearch] = useState('')
@@ -14,29 +13,31 @@ function Search() {
 
   async function handleSubmit() {
     setLoading(true)
-    console.log(keyword_extractor.extract(search,{
-      language:"english",
-      remove_digits: true,
-      return_changed_case:true,
-      remove_duplicates: true
-    }))
-    const response = await API.tweet.get('', {
-      searchQuery: keyword_extractor.extract(search,{
-        language:"english",
+    console.log(
+      keyword_extractor.extract(search, {
+        language: 'english',
         remove_digits: true,
-        return_changed_case:true,
-        remove_duplicates: true
+        return_changed_case: true,
+        remove_duplicates: true,
+      })
+    )
+    const response = await API.tweet.get('', {
+      searchQuery: keyword_extractor.extract(search, {
+        language: 'english',
+        remove_digits: true,
+        return_changed_case: true,
+        remove_duplicates: true,
       }),
       result_type: 'popular',
       count: 30,
-      lang: "en",
-      tweet_mode: "extended",
-      include_entities: true
+      lang: 'en',
+      tweet_mode: 'extended',
+      include_entities: true,
     })
     if (response.message == null) {
-    const { tweets } = response
-    const { statuses } = tweets
-    setTweets(statuses ?? [])
+      const { tweets } = response
+      const { statuses } = tweets
+      setTweets(statuses ?? [])
     }
     setLoading(false)
   }
@@ -49,9 +50,8 @@ function Search() {
       <div style={{ padding: '5px 10px' }}>
         {loading ? (
           <Typography variant="h3" gutterBottom>
-            Fetching tweets...  
+            Fetching tweets...
           </Typography>
-          
         ) : (
           <>
             <p>Search some tweets</p>
@@ -62,17 +62,17 @@ function Search() {
             <hr />
             <p>Search results (Verified handles only)</p>
             <div className="all_searches">
-            {tweets
-              .filter((tweet) => tweet.user.verified) // Filter verified users
-              .map((tweet) => {
-                return (
-                  <>
-                    <Display key={tweet.id_str} props={tweet}/>
-                    <br/>
-                  </>
-                )
-              })}
-             </div>
+              {tweets
+                .filter((tweet) => tweet.user.verified) // Filter verified users
+                .map((tweet) => {
+                  return (
+                    <>
+                      <Display key={tweet.id_str} props={tweet} />
+                      <br />
+                    </>
+                  )
+                })}
+            </div>
           </>
         )}
       </div>

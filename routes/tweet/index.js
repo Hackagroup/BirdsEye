@@ -16,12 +16,14 @@ router.get('/', async (req, res) => {
     const { searchQuery, result_type, count, lang, tweet_mode, include_entities } = req.query
     client.get(
       'search/tweets',
-      { q: searchQuery, 
+      {
+        q: searchQuery,
         result_type: result_type,
-         count: count, 
-         lang: lang, 
-         tweet_mode: tweet_mode, 
-         include_entities: include_entities },
+        count: count,
+        lang: lang,
+        tweet_mode: tweet_mode,
+        include_entities: include_entities,
+      },
       function (err, tweets, response) {
         try {
           if (err) throw err
@@ -70,7 +72,6 @@ router.post('/', async (req, res) => {
       message: 'Unknown error occurred!',
     })
   }
-  
 })
 
 module.exports = router

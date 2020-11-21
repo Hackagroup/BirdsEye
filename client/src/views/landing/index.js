@@ -23,15 +23,19 @@ function Login() {
 
   function handleSuccess(res) {
     res.json().then((userCredentials) => {
-      localStorage.setItem('userCredentials', JSON.stringify(userCredentials))
-      dispatch({
-        type: SET_USER,
-        payload: {
-          isAuthenticated: true,
-          userCredentials,
-        },
-      })
-      setLoading(false)
+      if (userCredentials.user_id != null) {
+        localStorage.setItem('userCredentials', JSON.stringify(userCredentials))
+        dispatch({
+          type: SET_USER,
+          payload: {
+            isAuthenticated: true,
+            userCredentials,
+          },
+        })
+        setLoading(false)
+      } else {
+        handleFailure(userCredentials)
+      }
     })
   }
 

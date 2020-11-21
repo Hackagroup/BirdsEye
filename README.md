@@ -1,6 +1,5 @@
 <p align="center"><a href="#" target="_blank"><img width="400"src="https://i.imgur.com/lb8GddO.png"></a></p>
 
-
 <div align="center">
   <h2>BirdsEye, A closer look at the bigger picture</h2>
 
@@ -17,10 +16,11 @@
 <br>
 <div align="center">
 
-  ![Node.js CI](https://github.com/Hackagroup/BirdsEye/workflows/Node.js%20CI/badge.svg) 
-    <a href="#"><img src="https://img.shields.io/npm/l/vue.svg?sanitize=true" alt="License"></a>
-    [<img src="https://img.shields.io/badge/slack-@hackagroup-yellow.svg?logo=slack">](https://join.slack.com/t/hackagroupworkspace/shared_invite/zt-jdeuctxd-Zy5QQ6XIrM5xXPyLSqqzqQ)
-    [![Build Status](https://travis-ci.com/Hackagroup/BirdsEye.svg?branch=main)](https://travis-ci.com/Hackagroup/BirdsEye)
+![Node.js CI](https://github.com/Hackagroup/BirdsEye/workflows/Node.js%20CI/badge.svg)
+<a href="#"><img src="https://img.shields.io/npm/l/vue.svg?sanitize=true" alt="License"></a>
+[<img src="https://img.shields.io/badge/slack-@hackagroup-yellow.svg?logo=slack">](https://join.slack.com/t/hackagroupworkspace/shared_invite/zt-jdeuctxd-Zy5QQ6XIrM5xXPyLSqqzqQ)
+[![Build Status](https://travis-ci.com/Hackagroup/BirdsEye.svg?branch=main)](https://travis-ci.com/Hackagroup/BirdsEye)
+
 </div>
 <br>
 <br>
