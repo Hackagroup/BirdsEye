@@ -9,7 +9,6 @@ import Landing from './views/landing/'
 import Dashboard from './views/dashboard/'
 import Search from './views/search'
 import Settings from './views/settings'
-import Background from './components/Background'
 
 import store from './store'
 import { SET_USER } from './actions/types'
@@ -31,7 +30,6 @@ function App() {
     <Provider store={store}>
       <Router>
         <Navbar />
-        <Background />
         <Switch>
           <Route exact path="/landing" component={Landing} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
@@ -40,7 +38,6 @@ function App() {
           {/* Default route */}
           <Route component={Landing} />
         </Switch>
-        <Background />
       </Router>
     </Provider>
   )
