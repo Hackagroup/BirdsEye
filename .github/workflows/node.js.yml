@@ -24,6 +24,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: npm install -g jest
     - run: npm ci
+    - run: cd client && npm install && cd ../
     - run: npm run build --if-present
     - run: npm run test:coverage
