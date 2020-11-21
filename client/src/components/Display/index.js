@@ -62,11 +62,13 @@ function Display(props) {
     <>
       <div id="box">
         <div className="display_block">
-          <div>
-            @{tweet.user.screen_name} tweeted: {tweet.full_text}
+          <div class="header">
+          <img class="profilePicture" src={tweet.user.profile_image_url}/>
+          <b> @{tweet.user.screen_name}</b>
+          <b>{parseDate(tweet.created_at)}</b>
           </div>
-          <div className="display_block_date">
-            <b>{parseDate(tweet.created_at)}</b>
+          <div>
+            tweeted: {tweet.full_text}
           </div>
           <div>{hashtags.length > 0 ? hashtags.map((x) => '#' + x.text).join(' ') : ''}</div>
           <a target="_blank" href={links}>

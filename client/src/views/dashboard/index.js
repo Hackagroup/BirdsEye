@@ -69,24 +69,26 @@ function Dashboard() {
       <Helmet>
         <title>#BirdsEye - Dashboard</title>
       </Helmet>
-      <div style={{ padding: '5px 10px' }}>
+      <div id="tweet" style={{ padding: '5px 10px' }}>
         {loading ? (
           <p>Posting new tweet...</p>
         ) : (
           <>
             <p>Share something!</p>
-            <input
-              type="text"
-              value={tweetContent}
-              onChange={(e) => setTweetContent(e.target.value)}
-            />
-            <button type="button" onClick={handleSubmit}>
-              Tweet!
-            </button>
+            <div class="search">
+              <input
+                type="text"
+                value={tweetContent}
+                onChange={(e) => setTweetContent(e.target.value)}
+              />
+              <button type="button" onClick={handleSubmit}>
+                Tweet!
+              </button>
+            </div>
           </>
         )}
-      </div>
       <p>Similar tweets for you to look @(Verified handles only)</p>
+      </div>
       {similarTweets
         .filter((tweet) => tweet.user.verified) // Filter verified users
         .map((tweet) => {

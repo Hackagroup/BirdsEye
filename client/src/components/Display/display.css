@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-self: center;
+  justify-content: space-around;
   align-items: center;
   width: 50%;
   height: 50%;
@@ -23,7 +24,7 @@
 
 .display_text {
   position: absolute;
-  width: 460px;
+  width: 50%;
   height: 128px;
   left: 505px;
   /* top: 177px; */
@@ -62,4 +63,20 @@ color: #000000; */
 
 .images {
   width: 30%;
+}
+
+.profilePicture {
+  border-radius: 50%;
+  margin-right: 3%;
+  margin-left: 5%;
+}
+.header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header>b{
+  margin-left: 2%;
 }
