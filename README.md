@@ -29,6 +29,7 @@ Gif of web app coming soon
 <br>
 
 # Prototype
+
 <br>
 <!-- <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0" allowfullscreen></iframe> -->
 <a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0"><img src="https://i.imgur.com/bwmEmAJ.png" width="400"></a> 
@@ -40,7 +41,6 @@ Gif of web app coming soon
 <br>
 
 # Developers
-
 
 <p>In order to run, use:</p>
 
@@ -58,32 +58,33 @@ bash setup.sh
 <br>
 
 # Project Structure
+
 Our project structure is as follows:
 
-- ***.github*** : Github related files.
-  - ***workflows*** : Github Action Workflows 
-- ***client*** : Frontend/Client-side code (ReactJS)
-   - ***public*** : All public assets for react
-   - ***src*** : Main frontend source code
-      - ***actions*** : Types used for express/react comms
-      - ***api*** : Twitter API used throughout app 
-      - ***assets*** : assets used in components/views for react
-      - ***components*** : where all components are defined
-      - ***constants*** : constants required throughout react
-      - ***reducers*** : redux reducers
-      - ***util*** : frontend dev utility
-      - ***views*** : All the views of the app like `/dashboard`
-- ***public*** : Store images used in app and other services.
-- ***routes*** : Backend/Express routes
-  - ***login***: Authentication using twitter consumer api/sercret key
-  - ***tweet***: Searches for tweets and creates new tweets
-  - ***user***  : Fetches user information using `/:userid`
-- ***utils*** : Utilities for devs.
-- ***.env(.example)*** :Enviorement variables for Twitter Consumer API's
-- ***.travis.yml*** : Travis-CI Configuration
-- ***package.json*** : All Node dependancies and scripts for testing & building
-- ***server.js*** : NodeJS Entry point
-- ***setup.sh***: Shell file that aids for installing all dependancies and running app!
+- **_.github_** : Github related files.
+  - **_workflows_** : Github Action Workflows
+- **_client_** : Frontend/Client-side code (ReactJS)
+  - **_public_** : All public assets for react
+  - **_src_** : Main frontend source code
+    - **_actions_** : Types used for express/react comms
+    - **_api_** : Twitter API used throughout app
+    - **_assets_** : assets used in components/views for react
+    - **_components_** : where all components are defined
+    - **_constants_** : constants required throughout react
+    - **_reducers_** : redux reducers
+    - **_util_** : frontend dev utility
+    - **_views_** : All the views of the app like `/dashboard`
+- **_public_** : Store images used in app and other services.
+- **_routes_** : Backend/Express routes
+  - **_login_**: Authentication using twitter consumer api/sercret key
+  - **_tweet_**: Searches for tweets and creates new tweets
+  - **_user_** : Fetches user information using `/:userid`
+- **_utils_** : Utilities for devs.
+- **_.env(.example)_** :Enviorement variables for Twitter Consumer API's
+- **_.travis.yml_** : Travis-CI Configuration
+- **_package.json_** : All Node dependancies and scripts for testing & building
+- **_server.js_** : NodeJS Entry point
+- **_setup.sh_**: Shell file that aids for installing all dependancies and running app!
 
 <br>
 

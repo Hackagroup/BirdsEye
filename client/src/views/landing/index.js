@@ -9,9 +9,8 @@ import TwitterLogin2 from 'react-twitter-login'
 import './landing.css'
 import logo from '../../assets/logo-white.png'
 import { Button } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles';
-import SaveIcon from '@material-ui/icons/Save';
-
+import { makeStyles } from '@material-ui/core/styles'
+import SaveIcon from '@material-ui/icons/Save'
 
 function Login() {
   const user = useSelector((state) => state.user)
@@ -21,9 +20,9 @@ function Login() {
     button: {
       margin: theme.spacing(1),
     },
-  }));
+  }))
 
-  const classes = useStyles();
+  const classes = useStyles()
 
   function handleFailure(err) {
     console.log(err)
@@ -51,7 +50,6 @@ function Login() {
     console.log(data)
   }
 
-
   return (
     <>
       <Helmet>
@@ -68,21 +66,20 @@ function Login() {
           <br></br>
           <br></br>
           <TwitterLogin
-              loginUrl={API_ENDPOINTS.LOGIN}
-              onFailure={handleFailure}
-              onSuccess={handleSuccess}
-              requestTokenUrl={API_ENDPOINTS.REQUEST_TOKEN_URL}
-              children={
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    size="large"
-                    className={classes.button}
-                    startIcon={<SaveIcon />}
-                  ></Button>
-              }
-            >
-            </TwitterLogin>
+            loginUrl={API_ENDPOINTS.LOGIN}
+            onFailure={handleFailure}
+            onSuccess={handleSuccess}
+            requestTokenUrl={API_ENDPOINTS.REQUEST_TOKEN_URL}
+            children={
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                className={classes.button}
+                startIcon={<SaveIcon />}
+              ></Button>
+            }
+          ></TwitterLogin>
           {/* <TwitterLogin2
             authCallback={authHandler}
             consumerKey={process.env.TWITTER_CONSUMER_API_KEY}
