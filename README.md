@@ -31,19 +31,26 @@ Gif of web app coming soon
 
 # Prototype
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0" allowfullscreen></iframe>
+<!-- <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0" allowfullscreen></iframe> -->
+<a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0"><img src="https://i.imgur.com/bwmEmAJ.png" width="322"></a> 
+<a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0"><img src="https://i.imgur.com/4GUfzMU.png" width="322"/></a>
 
+<a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0"><img src="https://i.imgur.com/s5uFHlV.png" width="322"></a>
+<a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0"><img src="https://i.imgur.com/YzrUlHV.png" width="322"/></a>
+
+<br>
 <br>
 <br>
 
 # Developers
 
+
 <p>In order to run, use:</p>
 
 ```sh
 # Clone Repository
-git clone https://github.com/Hackagroup/Twittive
-cd Twittive
+git clone https://github.com/Hackagroup/BirdsEye
+cd BirdsEye
 
 # Run Setup
 bash setup.sh
@@ -59,7 +66,7 @@ bash setup.sh
    This project is baed on a Twitter hackathon Hack for good theme, we plan to give users motivational tweets. More description will be posted.
 
 2. **What is this for?**
-   Twittive is for everyone looking for daily motivation to get through their life and get them ready to conquer the world!
+   BirdsEye is for everyone looking for daily motivation to get through their life and get them ready to conquer the world!
 
 3. **Need Help?**
    Absolutely! Any help would be appreciated! To get to us, either request an
@@ -69,4 +76,4 @@ bash setup.sh
 
 ---
 
-Twittive is Licensed under the MIT License.
+BirdsEye is Licensed under the MIT License.

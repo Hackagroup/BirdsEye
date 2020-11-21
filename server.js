@@ -29,7 +29,7 @@ app.use(bodyParser.json())
 app.use(routes)
 
 app.get('/', (req, res) => {
-  res.status(404).send('Welcome to Twittive!')
+  res.status(404).send('Welcome to BirdsEye!')
 })
 
 // Any undefined route

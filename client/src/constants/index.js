@@ -2,7 +2,7 @@ export const environment = process.env.REACT_APP_BUILD_ENV || 'development'
 
 export const API_BASE_URL = {
   development: 'http://localhost:3001',
-  production: 'http://twittive.com',
+  production: 'http://birdseye.com',
 }
 
 export const API_ENDPOINTS = {
