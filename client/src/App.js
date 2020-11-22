@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
@@ -19,17 +19,15 @@ import isEmpty from './utils/isEmpty'
 import { createBrowserHistory } from 'history'
 const history = createBrowserHistory()
 
-function Wrapper(){
-    return(
-        <Provider store={store}>
-          <Router>
-            <Route component={App} />
-          </Router>
-        </Provider>
-    )
+function Wrapper() {
+  return (
+    <Provider store={store}>
+      <Router>
+        <Route component={App} />
+      </Router>
+    </Provider>
+  )
 }
-
-
 
 // Check for user credentials in local storage (in-case app is reloaded/reopened)
 if (!isEmpty(localStorage.userCredentials)) {
@@ -42,27 +40,23 @@ if (!isEmpty(localStorage.userCredentials)) {
   })
 }
 
-
-function App(){
-
-  
-    const location = useLocation()
-    return(
-      <>
-        <Navbar />
-        <AnimatePresence>
-          <Switch location={location} key={location.pathname}>
-            <Route exact path="/landing" component={Landing} />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <PrivateRoute exact path="/search" component={Search} />
-            <PrivateRoute exact path="/settings" component={Settings} />
-            {/* Default route */}
-            <Route component={Landing} />
-          </Switch>
-        </AnimatePresence>
-      </>
-    )
-
+function App() {
+  const location = useLocation()
+  return (
+    <>
+      <Navbar />
+      <AnimatePresence>
+        <Switch location={location} key={location.pathname}>
+          <Route exact path="/landing" component={Landing} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/search" component={Search} />
+          <PrivateRoute exact path="/settings" component={Settings} />
+          {/* Default route */}
+          <Route component={Landing} />
+        </Switch>
+      </AnimatePresence>
+    </>
+  )
 }
 
 export default Wrapper

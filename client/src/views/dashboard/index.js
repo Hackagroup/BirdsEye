@@ -3,10 +3,9 @@ import { Helmet } from 'react-helmet'
 import keyword_extractor from 'keyword-extractor'
 import API from '../../api'
 import './dashboard.css'
-import { motion } from "framer-motion";
-import {pageVariants, pageTransition, pageStyle} from '../../constants/trans'
+import { motion } from 'framer-motion'
+import { pageVariants, pageTransition, pageStyle } from '../../constants/trans'
 import Display from '../../components/Display'
-
 
 function Dashboard() {
   const [tweetContent, setTweetContent] = useState('')
@@ -69,22 +68,23 @@ function Dashboard() {
   }
 
   return (
-    <>
-    <Helmet>
-      <title>Dashboard</title>
-    </Helmet>
-        <motion.div
+    <motion.div
       style={pageStyle}
       initial="initial"
       animate="in"
       exit="out"
       variants={pageVariants}
-      transition={pageTransition}>
-      <section id="dashboard-page-content">  
+      transition={pageTransition}
+    >
+      <Helmet>
+        <title>Dashboard</title>
+      </Helmet>
+
+      <section id="dashboard-page-content">
         <div id="tweet" style={{ padding: '5px 10px' }}>
           {loading ? (
             <p>Posting new tweet...</p>
-          ):(
+          ) : (
             <>
               <p>Share something!</p>
               <div className="search">
@@ -111,9 +111,8 @@ function Dashboard() {
               </div>
             )
           })}
-          </section>
-        </motion.div>
-    </>
+      </section>
+    </motion.div>
   )
 }
 

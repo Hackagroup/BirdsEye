@@ -7,8 +7,8 @@ import InputLabel from '@material-ui/core/InputLabel'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import './settings.css'
-import { motion } from "framer-motion";
-import {pageVariants, pageTransition, pageStyle} from '../../constants/trans'
+import { motion } from 'framer-motion'
+import { pageVariants, pageTransition, pageStyle } from '../../constants/trans'
 
 import Grid from '@material-ui/core/Grid'
 import ToggleButton from '@material-ui/lab/ToggleButton'
@@ -86,18 +86,17 @@ function Settings() {
   }
 
   return (
-    <>
-      <Helmet>
-        <title>Settings</title>
-      </Helmet>
-
-              <motion.div
+    <motion.div
       style={pageStyle}
       initial="initial"
       animate="in"
       exit="out"
       variants={pageVariants}
-      transition={pageTransition}>
+      transition={pageTransition}
+    >
+      <Helmet>
+        <title>Settings</title>
+      </Helmet>
       <section id="settings-page-content">
         <div id="settings-panel">
           <div className="title-wrapper">
@@ -186,9 +185,7 @@ function Settings() {
           </div>
         </div>
       </section>
-
-      </motion.div>
-    </>
+    </motion.div>
   )
 }
 

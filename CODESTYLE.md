@@ -4,9 +4,9 @@
 
 ## Table Of Content
 
-* [Naming Conventions](#naming-conventions)
-* [Requires](#requires)
-* [Strict](#strict)
+- [Naming Conventions](#naming-conventions)
+- [Requires](#requires)
+- [Strict](#strict)
 
 ## Requires
 
@@ -91,7 +91,6 @@ path.join('a', 'b')
 var joinPath = require('path').join
 joinPath('a', 'b')
 var path = req.path
-
 ```
 
 ## Strict
