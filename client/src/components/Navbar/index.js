@@ -9,8 +9,7 @@ import logo from '../../assets/logo-white.png'
 import SearchIcon from '@material-ui/icons/Search'
 import CloseIcon from '@material-ui/icons/Close'
 import Button from '@material-ui/core/Button';
-import { green, purple } from '@material-ui/core/colors';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import TextField from '@material-ui/core/TextField';
 
 
 
@@ -62,7 +61,10 @@ function Navbar() {
           <div className="Navbar__search-icon">
             <SearchIcon />
           </div>
-          <input
+          <div className="Navbar__search__btn">
+                    <TextField id="standard" className="text_field_search" label="Search..." />
+          </div>
+          {/* <input
             type="text"
             name="search"
             placeholder="Search..."
@@ -78,7 +80,7 @@ function Navbar() {
                 setSearch('') // reset
               }
             }}
-          />
+          /> */}
           <div className="Navbar__search-icon Navbar__search-icon-close">
             {search.trim().length > 0 ? <CloseIcon onClick={() => setSearch('')} /> : null}
           </div>
