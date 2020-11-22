@@ -1,9 +1,17 @@
 .Navbar {
-  height: 75px;
+  /* height: 75px; */
   background-color: #45a1e5;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.MuiSvgIcon-root {
+    margin-top: 8px;
+}
+
+.text_field_search{
+    margin-top:8px;
 }
 
 .Navbar__left {
@@ -32,18 +40,39 @@
   margin-left: 5%;
   display: flex;
   justify-content: flex-start;
-  width: 100px;
+  width: 200px;
 }
 
 .Navbar__search-icon {
-  background: #ffffff;
-  width: 20px;
-  border-radius: 25px 0 0 25px;
-  padding-top: 8px;
-  padding-left: 8px;
-  padding-right: 7px;
-  color: #a1a1a1;
+    background: #ffffff;
+    width: 20px;
+    border-radius: 25px 0 0 25px;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 7px;
+    color: #a1a1a1;
+    margin-top: 8px;
 }
+
+.MuiInputBase-input {
+    margin-bottom: 12px;
+    font: inherit;
+    color: currentColor;
+    width: 100%;
+    border: 0;
+    height: 1.1876em;
+    margin: 0;
+    display: block;
+    padding: 6px 0 7px;
+    min-width: 0;
+    background: none;
+    box-sizing: content-box;
+    animation-name: mui-auto-fill-cancel;
+    letter-spacing: inherit;
+    animation-duration: 10ms;
+    -webkit-tap-highlight-color: transparent;
+}
+
 
 .Navbar__search-icon-close {
   border-radius: 0 25px 25px 0;
@@ -59,9 +88,9 @@
   color: #878787;
 }
 
-.Navbar__search > input {
+.Navbar__search__btn {
   width: 300px;
-  height: 35px;
+  /* height: 35px; */
   background: #ffffff;
   border: none;
   font-weight: 500;
@@ -73,9 +102,9 @@
   padding: 2px;
 }
 
-.Navbar__search > input::placeholder {
+/* .Navbar__search > input::placeholder {
   color: #a1a1a1;
-}
+} */
 
 .Navbar__link-settings {
   font-weight: 500;
