@@ -17,3 +17,8 @@ hr {
   height: 400px;
   margin-top: 10%;
 }
+
+section {
+  display: flex;
+  justify-content: center;
+}
