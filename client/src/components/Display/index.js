@@ -5,6 +5,7 @@ import './display.css'
 // "ATYCLB"
 
 function Display(props) {
+  console.log(props)
   let entities = props.props.entities
   let hashtags_n = entities.hashtags.length
 
@@ -12,6 +13,7 @@ function Display(props) {
   let hashtags = entities.hashtags
   let links_n = entities.urls.length
   let images_n = props.props.quoted_status
+  let imagesV2 = props.props.extended_entities
 
   function parseTags(hashtags) {
     let s = ''
@@ -29,7 +31,7 @@ function Display(props) {
   }
 
   let x = <div></div>
-  if (hashtags_n == 0) {
+  if (hashtags_n === 0) {
     x = 'No Hashtags'
   } else {
     x = parseTags(props.props.entities.hashtags)
@@ -48,16 +50,22 @@ function Display(props) {
     images = ''
   } else {
     if (
-      images_n.extended_entities != null ||
+      images_n.extended_entities !== undefined ||
       typeof images_n.extended_entities !== 'undefined' ||
-      images_n.extended_entities !== void 0
+      images_n.extended_entities !== void(0)
     ) {
       images = images_n.extended_entities.media.map((image) => {
+        console.log(image)
         return image.media_url_https
       })
     }
   }
-  console.log(tweet)
+
+  if (imagesV2 != null) {
+    images = imagesV2.media.map((image) => {
+      return image.media_url_https
+    })
+  }
   return (
     <>
       <div id="box">
@@ -74,7 +82,17 @@ function Display(props) {
           <a target="_blank" href={links}>
             {links}
           </a>
-          <img class="images" src={images} />
+          <div class="pictures">
+          {images.length > 0 ? images.map((x) => {
+          return(
+            <div style={{width: (100/(images.length+0.5)) + "%"}}><a href={x} target="_blank"><img href={x} target="_blank" 
+            class="images" src={x} />
+            </a>
+            </div>
+          )})
+          :""}
+          </div>
+          
         </div>
       </div>
     </>
