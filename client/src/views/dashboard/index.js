@@ -87,7 +87,7 @@ function Dashboard() {
             </div>
           </>
         )}
-      <p>Similar tweets for you to look @(Verified handles only)</p>
+        <p>Similar tweets for you to look @(Verified handles only)</p>
       </div>
       {similarTweets
         .filter((tweet) => tweet.user.verified) // Filter verified users
