@@ -9,6 +9,7 @@ function Dashboard() {
   const [tweetContent, setTweetContent] = useState('')
   const [loading, setLoading] = useState(false)
   const [similarTweets, setSimilarTweets] = useState([])
+  const [popularCheck, setPopularCheck] = useState(true)
 
   async function handleSubmit() {
     setLoading(true)
@@ -23,6 +24,8 @@ function Dashboard() {
         remove_duplicates: true,
       })
       await searchtweet(keywords)
+      console.log(similarTweets.length + keywords)
+      
     } else {
       setLoading(false)
     }
@@ -40,16 +43,21 @@ function Dashboard() {
     if (response.message == null) {
       const { tweets } = response
       const { statuses } = tweets
-      console.log(tweets)
-      setSimilarTweets(statuses ?? [])
+      console.log(tweets.length<=0)
+      setSimilarTweets(statuses ?? [])   
+      if(tweets.length<=0){
+        await searchTweetMixed(sentence)
+     }   
     }
+    
     setLoading(false)
+    
   }
 
-  async function searchInfographic(sentence) {
+  async function searchTweetMixed(sentence) {
     const response = await API.tweet.get('', {
       searchQuery: sentence,
-      result_type: 'popular',
+      result_type: 'mixed',
       count: 30,
       lang: 'en',
       tweet_mode: 'extended',
@@ -59,6 +67,7 @@ function Dashboard() {
       const { tweets } = response
       const { statuses } = tweets
       console.log(tweets)
+      setPopularCheck(false)
       setSimilarTweets(statuses ?? [])
     }
     setLoading(false)
@@ -89,9 +98,16 @@ function Dashboard() {
         )}
         <p>Similar tweets for you to look @(Verified handles only)</p>
       </div>
-      {similarTweets
+      {popularCheck ? similarTweets
         .filter((tweet) => tweet.user.verified) // Filter verified users
         .map((tweet) => {
+          return (
+            <div key={tweet.id_str}>
+              <Display props={tweet} />
+              <hr />
+            </div>
+          )
+        }): similarTweets.map((tweet) => {
           return (
             <div key={tweet.id_str}>
               <Display props={tweet} />
