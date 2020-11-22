@@ -15,7 +15,7 @@ function Dashboard() {
     const response = await API.tweet.post({ tweetBody: tweetContent })
     if (response.message == null) {
       const { tweet: createdTweet } = response
-      console.log('Created tweet: ', createdTweet)
+      // console.log('Created tweet: ', createdTweet)
       const keywords = keyword_extractor.extract(createdTweet.text, {
         language: 'english',
         remove_digits: true,
@@ -92,7 +92,6 @@ function Dashboard() {
       {similarTweets
         .filter((tweet) => tweet.user.verified) // Filter verified users
         .map((tweet) => {
-          console.log(tweet)
           return (
             <div key={tweet.id_str}>
               <Display props={tweet} />

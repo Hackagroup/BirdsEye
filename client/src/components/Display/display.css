@@ -62,7 +62,8 @@ color: #000000; */
 }
 
 .images {
-  width: 30%;
+  width: 100%;
+  height: 35%;
 }
 
 .profilePicture {
@@ -79,4 +80,11 @@ color: #000000; */
 }
 .header > b {
   margin-left: 2%;
+}
+.pictures{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
