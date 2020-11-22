@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
+import './settings.css'
 
 function Settings() {
   const user = useSelector((state) => state.user)
