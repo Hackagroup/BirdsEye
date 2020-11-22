@@ -98,11 +98,9 @@ function Settings() {
           </div>
           <hr id="settings-hr"></hr>
           
-          <img height="180" width="180" src={userInfo.profile_image_url_https} />
+          <img className="profilePic" src={userInfo.profile_image_url_https} />
           
           <div className="text-wrapper">
-
-            /* Add user info here */
             <p><strong>Username:</strong> <br></br>{screen_name}</p>
             <p><strong>Name:</strong> <br></br>{userInfo.name}</p>
             <p><strong>Bio:</strong> <br></br>{userInfo.description}</p>
