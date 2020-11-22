@@ -1,13 +1,13 @@
-import React from 'react';
-import Lottie from 'react-lottie';
-import loader from './animations/loader.json';
-import success from './animations/success.json';
+import React from 'react'
+import Lottie from 'react-lottie'
+import loader from './animations/loader.json'
+import success from './animations/success.json'
 
 // create a mapping between the passed variant and the associated json file
 const variants = {
   loader,
   success,
-};
+}
 
 function LottieAnimation({ variant, loop = false }) {
   return (
@@ -21,7 +21,7 @@ function LottieAnimation({ variant, loop = false }) {
       }}
       isClickToPauseDisabled
     />
-  );
+  )
 }
 
-export default LottieAnimation;
+export default LottieAnimation

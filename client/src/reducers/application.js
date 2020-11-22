@@ -1,4 +1,11 @@
-import { SET_SEARCH, SET_FILTERS, SET_STATE, RESET_SEARCH, RESET_FILTERS, RESET_STATE } from '../actions/types'
+import {
+  SET_SEARCH,
+  SET_FILTERS,
+  SET_STATE,
+  RESET_SEARCH,
+  RESET_FILTERS,
+  RESET_STATE,
+} from '../actions/types'
 
 const initialState = {
   searchQuery: '',
@@ -16,12 +23,12 @@ function userReducer(state = initialState, action) {
     case SET_FILTERS:
       return {
         ...state,
-        searchFilters: action.payload
+        searchFilters: action.payload,
       }
     case SET_STATE:
       return {
         ...state,
-        ...action.payload
+        ...action.payload,
       }
     case RESET_SEARCH:
       return {
@@ -35,7 +42,7 @@ function userReducer(state = initialState, action) {
       }
     case RESET_STATE:
       return {
-        ...initialState
+        ...initialState,
       }
     default:
       return state
