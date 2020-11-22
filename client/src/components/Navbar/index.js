@@ -43,7 +43,7 @@ function Navbar() {
     },
   }))(Button);
 
-  if (!['/dashboard', '/search', '/settings'].includes(pathname)) {
+  if (!['/dashboard', '/settings'].includes(pathname)) {
     // Don't render navbar on landing page
     return null
   }
@@ -79,6 +79,7 @@ function Navbar() {
                   },
                 })
                 setSearch('') // reset
+                if (pathname === '/settings') history.push('/landing')
               }
             }}
           />
