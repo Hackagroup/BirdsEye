@@ -76,7 +76,7 @@ function Dashboard() {
         ) : (
           <>
             <p>Share something!</p>
-            <div class="search">
+            <div className="search">
               <input
                 type="text"
                 value={tweetContent}
