@@ -52,7 +52,7 @@ function Display(props) {
     if (
       images_n.extended_entities !== undefined ||
       typeof images_n.extended_entities !== 'undefined' ||
-      images_n.extended_entities !== void(0)
+      images_n.extended_entities !== void 0
     ) {
       images = images_n.extended_entities.media.map((image) => {
         console.log(image)
@@ -81,16 +81,18 @@ function Display(props) {
             {links}
           </a>
           <div class="pictures">
-          {images.length > 0 ? images.map((x) => {
-          return(
-            <div style={{width: (100/(images.length+0.5)) + "%"}}><a href={x} target="_blank"><img href={x} target="_blank" 
-            class="images" src={x} />
-            </a>
-            </div>
-          )})
-          :""}
+            {images.length > 0
+              ? images.map((x) => {
+                  return (
+                    <div style={{ width: 100 / (images.length + 0.5) + '%' }}>
+                      <a href={x} target="_blank">
+                        <img href={x} target="_blank" class="images" src={x} />
+                      </a>
+                    </div>
+                  )
+                })
+              : ''}
           </div>
-          
         </div>
       </div>
     </>
