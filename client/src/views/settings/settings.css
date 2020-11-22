@@ -1,0 +1,70 @@
+#settings-page-content {
+    display: flex;
+    justify-content: center;
+  }
+
+#settings-panel {
+    background-color: white;
+    border: 1px solid #A1A1A1;
+    border-radius: 15px;
+    text-align: center;
+    width: 450px;
+    height: fit-content;
+    margin: 5%;
+    padding: 20px 0px;
+}
+
+#settings-hr {
+    background-color: #45A1E5;
+    height: 2px;
+    width: 350px;
+    margin-top:0;
+}
+
+.text-wrapper {
+    padding: 5px 50px;
+    text-align: left;
+}
+
+.title-wrapper {
+    padding: 5px 50px;
+    text-align: left;
+}
+
+/* Everything for the dropdown menus */
+.dropbtn {
+    margin-left: 30px;
+    margin-bottom: 10px;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 16px;
+    border: #A1A1A1 1px solid;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+  /* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+  
