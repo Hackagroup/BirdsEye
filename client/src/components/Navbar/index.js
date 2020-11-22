@@ -2,17 +2,19 @@ import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+<<<<<<< HEAD
 import { RESET_USER, SET_STATE } from '../../actions/types'
 import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+=======
+import { RESET_USER, SET_SEARCH } from '../../actions/types'
+import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles'
+>>>>>>> main
 import './Navbar.css'
 import logo from '../../assets/logo-white.png'
 import SearchIcon from '@material-ui/icons/Search'
 import CloseIcon from '@material-ui/icons/Close'
-import Button from '@material-ui/core/Button';
-import { green, purple } from '@material-ui/core/colors';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-
-
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
 
 function Navbar() {
   const [search, setSearch] = useState('')
@@ -25,32 +27,28 @@ function Navbar() {
     margin: {
       margin: theme.spacing(1),
     },
-  }));
-  const classes = useStyles();
+  }))
+  const classes = useStyles()
 
   const ColorButton = withStyles((theme) => ({
     root: {
-      color: "black",
-      borderRadius: "15px",
-      size:"90px",
+      color: 'black',
+      borderRadius: '15px',
+      size: '90px',
       backgroundColor: 'white',
       '&:hover': {
         backgroundColor: '#DCDCDC',
       },
       shape: {
         borderRadius: 8,
-      }
+      },
     },
-  }))(Button);
+  }))(Button)
 
   if (!['/dashboard', '/settings'].includes(pathname)) {
     // Don't render navbar on landing page
     return null
   }
-  
-
-
-
 
   return (
     <div className="Navbar">
@@ -62,7 +60,10 @@ function Navbar() {
           <div className="Navbar__search-icon">
             <SearchIcon />
           </div>
-          <input
+          <div className="Navbar__search__btn">
+            <TextField id="standard" className="text_field_search" label="Search..." />
+          </div>
+          {/* <input
             type="text"
             name="search"
             placeholder="Search..."
@@ -82,7 +83,7 @@ function Navbar() {
                 if (pathname === '/settings') history.push('/landing')
               }
             }}
-          />
+          /> */}
           <div className="Navbar__search-icon Navbar__search-icon-close">
             {search.trim().length > 0 ? <CloseIcon onClick={() => setSearch('')} /> : null}
           </div>
@@ -97,8 +98,20 @@ function Navbar() {
         >
           Settings
         </button>
-        <ColorButton variant="contained" color="primary" style={{maxWidth: '100px', maxHeight: '45px', minWidth: '100px', minHeight: '45px', fontSize: '21px', fontWeight: '500', textTransform: 'capitalize'}} className={classes.margin}
-      onClick={() => {
+        <ColorButton
+          variant="contained"
+          color="primary"
+          style={{
+            maxWidth: '100px',
+            maxHeight: '45px',
+            minWidth: '100px',
+            minHeight: '45px',
+            fontSize: '21px',
+            fontWeight: '500',
+            textTransform: 'capitalize',
+          }}
+          className={classes.margin}
+          onClick={() => {
             // Clear token from localstorage
             localStorage.removeItem('userCredentials')
             // Clear redux state
@@ -107,9 +120,10 @@ function Navbar() {
             })
             // Go to landing page
             history.push('/landing')
-          }}>
-        Logout
-      </ColorButton>
+          }}
+        >
+          Logout
+        </ColorButton>
       </div>
     </div>
   )

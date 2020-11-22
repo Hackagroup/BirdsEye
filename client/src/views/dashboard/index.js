@@ -189,7 +189,7 @@ function Dashboard() {
   return (
     <>
       <Helmet>
-        <title>#BirdsEye - Dashboard</title>
+        <title>Dashboard</title>
       </Helmet>
       <div className="Dashboard__parent">
         <div className="Dashboard">

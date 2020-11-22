@@ -48,13 +48,13 @@ function Login() {
       <Helmet>
         <title>#BirdsEye</title>
       </Helmet>
-      <section>
+      <section id="login-section">
         <div id="panel">
           <br></br>
           <h1>Welcome to #BirdsEye</h1>
           <img src={logo} width="180" height="110" alt="Birds eye logo"></img>
           <br></br>
-          <hr></hr>
+          <hr id="login-hr"></hr>
           <h3>"A closer look at the big picture"</h3>
           <br></br>
           <br></br>
