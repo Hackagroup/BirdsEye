@@ -45,7 +45,6 @@ function App() {
   return (
     <>
       <Navbar />
-      <AnimatePresence>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/landing" component={Landing} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
@@ -54,7 +53,6 @@ function App() {
           {/* Default route */}
           <Route component={Landing} />
         </Switch>
-      </AnimatePresence>
     </>
   )
 }

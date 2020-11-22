@@ -86,14 +86,7 @@ function Settings() {
   }
 
   return (
-    <motion.div
-      style={pageStyle}
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-    >
+    <>
       <Helmet>
         <title>Settings</title>
       </Helmet>
@@ -185,7 +178,7 @@ function Settings() {
           </div>
         </div>
       </section>
-    </motion.div>
+    </>
   )
 }
 
