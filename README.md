@@ -33,7 +33,7 @@ BirdsEye lets you look at other simmilar tweets which can give you a sense of th
 
 # Usage
 
-Gif of web app coming soon
+<image src="https://media.giphy.com/media/I2cpp0VzIRrmlllhBM/giphy.gif"/>
 
 <br>
 
@@ -43,7 +43,7 @@ Gif of web app coming soon
 <a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0"><img src="https://i.imgur.com/U9zO2ML.jpg" width="400"></a> <a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0"><img src="https://i.imgur.com/MftoDZ2.jpg" width="400"/></a><a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0"><img src="https://i.imgur.com/upRmuMa.jpg" width="400"></a><a href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fw8NyNBG9IjVIYhv5XnAYwb%2FBirdsEye-Prototype%3Fnode-id%3D34885%253A0"><img src="https://i.imgur.com/nEkXdzF.jpg" width="400"/></a>
 
 <br>
-<image src="https://media.giphy.com/media/I2cpp0VzIRrmlllhBM/giphy.gif"/>
+
 # Developers
 
 <p>In order to run, use:</p>
