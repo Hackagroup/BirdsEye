@@ -58,7 +58,7 @@
   color: #878787;
 }
 
-.Navbar__search > input{
+.Navbar__search > input {
   width: 300px;
   height: 35px;
   background: #ffffff;
@@ -93,7 +93,6 @@
 .Navbar__link-settings:hover {
   border-bottom: 2px solid hsl(0, 0%, 100%);
 }
-
 
 .Navbar__link-settings-selected {
   border-bottom: 2px solid hsl(0, 0%, 100%);

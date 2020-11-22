@@ -2,7 +2,7 @@ import { SET_SEARCH, SET_FILTERS, RESET_SEARCH, RESET_FILTERS } from '../actions
 
 const initialState = {
   searchQuery: '',
-  searchFilters: {}
+  searchFilters: {},
 }
 
 function userReducer(state = initialState, action) {
@@ -21,7 +21,7 @@ function userReducer(state = initialState, action) {
       return {
         ...state,
         searchQuery: initialState.searchQuery,
-    }
+      }
     case RESET_FILTERS:
       return {
         ...state,
