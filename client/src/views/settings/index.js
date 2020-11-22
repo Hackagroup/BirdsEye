@@ -2,15 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles'
-
-import InputLabel from '@material-ui/core/InputLabel'
-import FormControl from '@material-ui/core/FormControl'
-import Select from '@material-ui/core/Select'
-import './settings.css'
-import { motion } from 'framer-motion'
-import { pageVariants, pageTransition, pageStyle } from '../../constants/trans'
-
-import Grid from '@material-ui/core/Grid'
 import ToggleButton from '@material-ui/lab/ToggleButton'
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup'
 import Tooltip from '@material-ui/core/Tooltip'
@@ -18,42 +9,13 @@ import Zoom from '@material-ui/core/Zoom'
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser'
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount'
 import PersonIcon from '@material-ui/icons/Person'
-
+import InputLabel from '@material-ui/core/InputLabel'
+import FormControl from '@material-ui/core/FormControl'
+import Select from '@material-ui/core/Select'
 import API from '../../api'
+import './settings.css'
 
 function Settings() {
-  const user = useSelector((state) => state.user)
-  const { userCredentials } = user
-  const { screen_name } = userCredentials
-  const [userInfo, setUserInfo] = useState([])
-
-  useEffect(() => {
-    getUserInfo()
-  }, [])
-  async function getUserInfo() {
-    console.log(user.userCredentials.user_id)
-    const response = await API.user.get('', {
-      Name: screen_name,
-      screen_name: screen_name,
-      user_id: user.userCredentials.user_id,
-    })
-    if (response.message == null) {
-      console.log(response)
-      const { users } = response
-      const { statuses } = users
-      setUserInfo(users)
-    } else {
-    }
-  }
-
-  const [formats, setFormats] = React.useState(() => ['phone'])
-  const handleFormat = (event, newFormats) => {
-    console.log(newFormats)
-    if (newFormats.length) {
-      setFormats(newFormats)
-    }
-  }
-
   const toggleStyles = makeStyles((theme) => ({
     toggleContainer: {
       margin: theme.spacing(2, 0),
@@ -69,13 +31,38 @@ function Settings() {
       marginTop: theme.spacing(2),
     },
   }))
+
   const classes = useStyles()
   const toggle_classes = toggleStyles()
 
-  const [state, setState] = React.useState({
+  const user = useSelector((state) => state.user)
+  const { userCredentials } = user
+  const { screen_name } = userCredentials
+
+  const [userInfo, setUserInfo] = useState({})
+  const [formats, setFormats] = useState(() => ['phone'])
+  const [state, setState] = useState({
     age: '',
     name: 'hai',
   })
+
+  async function getUserInfo() {
+    const response = await API.user.get('', {
+      Name: screen_name,
+      screen_name: screen_name,
+      user_id: user.userCredentials.user_id,
+    })
+    if (response.message == null) {
+      const { users } = response
+      setUserInfo(users)
+    }
+  }
+
+  const handleFormat = (event, newFormats) => {
+    if (newFormats.length > 0) {
+      setFormats(newFormats)
+    }
+  }
 
   const handleChange = (event) => {
     const name = event.target.name
@@ -85,10 +72,15 @@ function Settings() {
     })
   }
 
+  useEffect(() => {
+    getUserInfo()
+    // eslint-disable-next-line
+  }, [])
+
   return (
     <>
       <Helmet>
-        <title>Settings</title>
+        <title>#BirdsEye - Settings</title>
       </Helmet>
       <section id="settings-page-content">
         <div id="settings-panel">
@@ -97,7 +89,7 @@ function Settings() {
           </div>
           <hr id="settings-hr"></hr>
 
-          <img className="profilePic" src={userInfo.profile_image_url_https} />
+          <img className="profilePic" alt="profilePic" src={userInfo.profile_image_url_https} />
 
           <div className="text-wrapper">
             <p>

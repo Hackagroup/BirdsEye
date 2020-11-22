@@ -33,7 +33,7 @@ BirdsEye lets you look at other simmilar tweets which can give you a sense of th
 
 # Usage
 
-Gif of web app coming soon
+<image src="https://media.giphy.com/media/7T3sxqHgRuXhWEDGwK/giphy.gif"/>
 
 <br>
 

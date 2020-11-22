@@ -1,7 +1,157 @@
-#tweet {
+.Dashboard__parent {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.Dashboard {
+  width: 500px;
+}
+
+.Dashboard__postTweet {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Dashboard__postTweet-loader {
+  width: 100px;
+}
+
+.Dashboard__postTweet > textarea {
+  width: 387px;
+  height: 103px;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: -1.5px;
+  color: #a1a1a1;
+  padding: 11px 22px;
+  resize: none;
+  outline: none;
+  background: #ffffff;
+  border: 1px solid #a1a1a1;
+  border-radius: 15px;
+}
+
+.Dashboard__postTweet > textarea::placeholder {
+  color: #a2a2a2;
+}
+
+.Dashboard__postTweet > button,
+.Dashboard__postTweet > button:focus,
+.Dashboard__postTweet > button:focus-within,
+.Dashboard__postTweet > button:active,
+.Dashboard__postTweet > button:visited {
+  width: 75px;
+  height: 45px;
+  background: #45a1e5;
+  border-radius: 15px;
+  border: none;
+  margin-left: 38px;
+  outline: none;
+  cursor: pointer;
+}
+
+.Dashboard__postTweet > button > img {
+  width: 45.1px;
+  height: 37.19px;
+  transform: rotate(-9.39deg);
+}
+
+.Dashboard__searchResults-loader--parent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Dashboard__searchResults-loader {
+  width: 100px;
+}
+
+.Dashboard__resultHeading {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  letter-spacing: -1.5px;
+  color: #000000;
+  padding-top: 32px;
+  padding-bottom: 54px;
+}
+
+.Dashboard__resultHeading > span {
+  color: #45a1e5;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.ShowTweet {
+  background-color: #ffffff;
+  border: 1px solid #a1a1a1;
+  border-radius: 15px;
+  padding: 11px 21px 0 21px;
+  margin-bottom: 60px;
+}
+
+.ShowTweet__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ShowTweet__header > div:nth-child(1) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ShowTweet__header > div:nth-child(1) > img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.ShowTweet__header > div:nth-child(1) > span {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: -1.5px;
+  color: #45a1e5;
+  padding-left: 10px;
+}
+
+.ShowTweet__header > div:nth-child(2) {
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: -1.5px;
+  color: #afafaf;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.ShowTweet__content {
+  padding-top: 10px;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: -1.5px;
+}
+
+.ShowTweet__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ShowTweet__actions > div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

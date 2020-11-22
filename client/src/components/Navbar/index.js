@@ -2,14 +2,13 @@ import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { RESET_USER, SET_SEARCH } from '../../actions/types'
-import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles'
+import { RESET_USER, SET_STATE } from '../../actions/types'
+import { withStyles, makeStyles } from '@material-ui/core/styles'
 import './Navbar.css'
 import logo from '../../assets/logo-white.png'
 import SearchIcon from '@material-ui/icons/Search'
 import CloseIcon from '@material-ui/icons/Close'
 import Button from '@material-ui/core/Button'
-import TextField from '@material-ui/core/TextField'
 
 function Navbar() {
   const [search, setSearch] = useState('')
@@ -23,6 +22,7 @@ function Navbar() {
       margin: theme.spacing(1),
     },
   }))
+
   const classes = useStyles()
 
   const ColorButton = withStyles((theme) => ({
@@ -40,7 +40,7 @@ function Navbar() {
     },
   }))(Button)
 
-  if (!['/dashboard', '/search', '/settings'].includes(pathname)) {
+  if (!['/dashboard', '/settings'].includes(pathname)) {
     // Don't render navbar on landing page
     return null
   }
@@ -55,10 +55,7 @@ function Navbar() {
           <div className="Navbar__search-icon">
             <SearchIcon />
           </div>
-          <div className="Navbar__search__btn">
-            <TextField id="standard" className="text_field_search" label="Search..." />
-          </div>
-          {/* <input
+          <input
             type="text"
             name="search"
             placeholder="Search..."
@@ -68,13 +65,17 @@ function Navbar() {
               if ((e.key === 'Enter' || e.keyCode === 13) && search.trim().length > 0) {
                 // set search query in redux state - can use it inside dashboard now
                 dispatch({
-                  type: SET_SEARCH,
-                  payload: search,
+                  type: SET_STATE,
+                  payload: {
+                    searchQuery: search,
+                    searchQueryStatus: -1,
+                  },
                 })
                 setSearch('') // reset
+                if (pathname === '/settings') history.push('/landing')
               }
             }}
-          /> */}
+          />
           <div className="Navbar__search-icon Navbar__search-icon-close">
             {search.trim().length > 0 ? <CloseIcon onClick={() => setSearch('')} /> : null}
           </div>
