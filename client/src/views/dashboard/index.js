@@ -68,14 +68,7 @@ function Dashboard() {
   }
 
   return (
-    <motion.div
-      style={pageStyle}
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={pageTransition}
-    >
+    <>
       <Helmet>
         <title>Dashboard</title>
       </Helmet>
@@ -112,7 +105,7 @@ function Dashboard() {
             )
           })}
       </section>
-    </motion.div>
+    </>
   )
 }
 
