@@ -1,5 +1,5 @@
 .Navbar {
-  height: 92px;
+  height: 80px;
   background-color: #45a1e5;
   display: flex;
   justify-content: space-between;
@@ -19,23 +19,24 @@
 }
 
 .Navbar__logo {
-  margin-left: 34px;
+  margin-left: 5%;
+  margin-top: 2%;
 }
 
 .Navbar__logo > img {
-  width: 133px;
-  height: 77px;
+  width: 110px;
+  height: 60px;
 }
 
 .Navbar__search {
-  margin-left: 53px;
+  margin-left: 5%;
   width: 319px;
-  height: 40px;
+  height: 35px;
   background: #ffffff;
   border-radius: 25px;
   border: none;
   font-weight: 500;
-  font-size: 28px;
+  font-size: 23px;
   line-height: 38px;
   letter-spacing: -1.5px;
   color: #a2a2a2;
@@ -53,30 +54,33 @@
 .Navbar__link:active,
 .Navbar__link:visited {
   font-weight: 500;
-  font-size: 28px;
+  font-size: 22px;
   line-height: 38px;
-  letter-spacing: -1.5px;
   color: #fffdfd;
   background-color: transparent;
   border: none;
   cursor: pointer;
   outline: none;
-  width: 139px;
-  height: 46px;
-  border-bottom: 4px solid transparent;
+  padding-left: 10%;
+  padding-right: 10%;
+  border-bottom: 2px solid transparent;
 }
 
 .Navbar__link-settings {
-  margin-right: 53px;
+  margin-right: 10%;
+  padding: 0px 10px;
+  border-bottom: 2px solid transparent;
 }
 
 .Navbar__link-settings:hover {
-  border-bottom: 4px solid hsl(0, 0%, 100%);
+  border-bottom: 2px solid hsl(0, 0%, 100%);
+  font-weight: bold;
 }
 
+/*
 .Navbar__link-settings-selected {
-  border-bottom: 4px solid hsl(0, 0%, 100%);
-}
+  border-bottom: 2px solid hsl(0, 0%, 100%);
+}*/
 
 .Navbar__link-logout,
 .Navbar__link-logout:focus,
