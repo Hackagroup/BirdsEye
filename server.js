@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // Routes
-app.use(routes)
+app.use('/api', routes)
 
 app.get('/', (req, res) => {
   res.status(404).send('Welcome to BirdsEye!')

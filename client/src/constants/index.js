@@ -1,7 +1,7 @@
 export const environment = process.env.REACT_APP_BUILD_ENV || 'production'
 
 export const API_BASE_URL = {
-  development: 'http://localhost:3001',
+  development: 'http://localhost:3001/api',
   production: 'http://18.220.176.33/api',
 }
 
