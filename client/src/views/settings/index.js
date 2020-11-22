@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,10 +18,33 @@ import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import PersonIcon from '@material-ui/icons/Person';
 
+import API from '../../api'
+
+
 function Settings() {
   const user = useSelector((state) => state.user)
   const { userCredentials } = user
   const { screen_name } = userCredentials
+  const [userInfo, setUserInfo] = useState([])
+
+  useEffect(() => {
+    getUserInfo()
+  }, []);
+  async function getUserInfo() {
+    console.log(user.userCredentials.user_id)
+    const response = await API.user.get("",{ 
+      Name:screen_name,
+      screen_name: screen_name,
+      user_id: user.userCredentials.user_id })
+    if (response.message == null) {
+       console.log( response)
+      const { users } = response
+      const { statuses } = users
+      setUserInfo(users)
+    } else {
+    }
+
+  }
 
   const [formats, setFormats] = React.useState(() => ['phone']);
   const handleFormat = (event, newFormats) => {
@@ -73,19 +96,15 @@ function Settings() {
           <div className="title-wrapper" >
             <h2 className="setting-title">User Information</h2>
           </div>
-          
           <hr id="settings-hr"></hr>
           
-          {/* Add user photo here */}
-          <img height="180" width="180" src="https://i.imgur.com/qZJqj94.png" />
+          <img className="profilePic" src={userInfo.profile_image_url_https} />
           
           <div className="text-wrapper">
-
-            /* Add user info here */
             <p><strong>Username:</strong> <br></br>{screen_name}</p>
-            <p><strong>Name:</strong> <br></br></p>
-            <p><strong>Bio:</strong> <br></br> </p>
-            <p><strong>Location:</strong> <br></br> </p>
+            <p><strong>Name:</strong> <br></br>{userInfo.name}</p>
+            <p><strong>Bio:</strong> <br></br>{userInfo.description}</p>
+            <p><strong>Location:</strong> <br></br>{userInfo.location} </p>
           </div>
           
           <br></br>

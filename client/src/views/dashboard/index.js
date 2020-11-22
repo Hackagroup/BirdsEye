@@ -29,6 +29,7 @@ function Dashboard() {
   }
 
   async function searchtweet(sentence) {
+    console.log(sentence)
     const response = await API.tweet.get('', {
       searchQuery: sentence,
       result_type: 'popular',

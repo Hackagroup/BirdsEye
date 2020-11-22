@@ -10,13 +10,29 @@ const getTwitterClient = require('../../utils/getTwitterClient')
   @return (success): user information
 */
 
-router.get('/:userId', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const { userId } = req.params
     const client = getTwitterClient(req)
-    //
-    // Fetch user data from twitter api here
-    //
+    const { userId } = req.params
+    const { Name, screen_name, user_id } = req.query
+    client.get(
+      'users/show',
+      { Name: Name,
+        screen_name: screen_name,
+        user_id: user_id
+      },
+      function (err, users, response) {
+        try {
+          if (err) throw err
+          return res.status(200).json({ users })
+        } catch (err) {
+          logger.error(err.stack ? err.stack : JSON.stringify(err))
+          return res.status(400).json({
+            message: 'Unknown error occurred!',
+          })
+        }
+      }
+    )
   } catch (err) {
     logger.error(err.stack ? err.stack : JSON.stringify(err))
     return res.status(400).json({
