@@ -3,7 +3,7 @@ h3 {
   color: white;
 }
 
-hr {
+#login-hr {
   background-color: white;
   height: 2px;
   width: 250px;
@@ -18,7 +18,7 @@ hr {
   margin-top: 10%;
 }
 
-section {
+#login-section {
   display: flex;
   justify-content: center;
 }
