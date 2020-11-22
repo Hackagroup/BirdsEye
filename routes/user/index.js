@@ -17,10 +17,7 @@ router.get('/', async (req, res) => {
     const { Name, screen_name, user_id } = req.query
     client.get(
       'users/show',
-      { Name: Name,
-        screen_name: screen_name,
-        user_id: user_id
-      },
+      { Name: Name, screen_name: screen_name, user_id: user_id },
       function (err, users, response) {
         try {
           if (err) throw err

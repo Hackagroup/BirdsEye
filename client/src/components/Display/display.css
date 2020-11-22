@@ -81,7 +81,7 @@ color: #000000; */
 .header > b {
   margin-left: 2%;
 }
-.pictures{
+.pictures {
   display: flex;
   width: 100%;
   flex-direction: row;

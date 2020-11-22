@@ -7,11 +7,11 @@
 }
 
 .MuiSvgIcon-root {
-    margin-top: 8px;
+  margin-top: 8px;
 }
 
-.text_field_search{
-    margin-top:8px;
+.text_field_search {
+  margin-top: 8px;
 }
 
 .Navbar__left {
@@ -44,34 +44,33 @@
 }
 
 .Navbar__search-icon {
-    background: #ffffff;
-    width: 20px;
-    border-radius: 25px 0 0 25px;
-    padding-top: 8px;
-    padding-left: 8px;
-    padding-right: 7px;
-    color: #a1a1a1;
+  background: #ffffff;
+  width: 20px;
+  border-radius: 25px 0 0 25px;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 7px;
+  color: #a1a1a1;
 }
 
 .MuiInputBase-input {
-    margin-bottom: 12px;
-    font: inherit;
-    color: currentColor;
-    width: 100%;
-    border: 0;
-    height: 1.1876em;
-    margin: 0;
-    display: block;
-    padding: 6px 0 7px;
-    min-width: 0;
-    background: none;
-    box-sizing: content-box;
-    animation-name: mui-auto-fill-cancel;
-    letter-spacing: inherit;
-    animation-duration: 10ms;
-    -webkit-tap-highlight-color: transparent;
+  margin-bottom: 12px;
+  font: inherit;
+  color: currentColor;
+  width: 100%;
+  border: 0;
+  height: 1.1876em;
+  margin: 0;
+  display: block;
+  padding: 6px 0 7px;
+  min-width: 0;
+  background: none;
+  box-sizing: content-box;
+  animation-name: mui-auto-fill-cancel;
+  letter-spacing: inherit;
+  animation-duration: 10ms;
+  -webkit-tap-highlight-color: transparent;
 }
-
 
 .Navbar__search-icon-close {
   border-radius: 0 25px 25px 0;
@@ -147,8 +146,5 @@
   border-radius: 15px;
 }
 
-
-.custom{
-
+.custom {
 }
-
