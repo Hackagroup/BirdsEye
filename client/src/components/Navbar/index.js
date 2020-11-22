@@ -15,7 +15,7 @@ function Navbar() {
   const dispatch = useDispatch()
   const { pathname } = location
 
-  if (pathname === '/landing') { // Don't render navbar on landing page
+  if (!['/dashboard', '/search', '/settings'].includes(pathname)) { // Don't render navbar on landing page
     return null
   }
 
@@ -25,9 +25,9 @@ function Navbar() {
         <Link className="Navbar__logo" to="/dashboard">
           <img src={logo} alt="Birds eye logo"></img>
         </Link>
-        <SearchIcon/>
+        <div className="Navbar__search">
+          <div className="Navbar__search-icon"><SearchIcon/></div>
           <input
-            className="Navbar__search"
             type="text"
             name="search"
             placeholder="Search..."
@@ -44,12 +44,13 @@ function Navbar() {
               }
             }}
           />
-        {search.trim().length > 0 ? <CloseIcon onClick={() => setSearch('')}/> : null}
+          <div className="Navbar__search-icon Navbar__search-icon-close">{search.trim().length > 0 ? <CloseIcon onClick={() => setSearch('')}/> : null}</div>
+        </div>
       </div>
       <div className="Navbar__right">
         <button
           onClick={() => history.push('/settings')}
-          className="Navbar__link Navbar__link-settings"
+          className={`Navbar__link Navbar__link-settings ${pathname === '/settings' ? 'Navbar__link-settings-selected' : ''}`}
         >
           Settings
         </button>
