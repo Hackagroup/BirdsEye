@@ -5,6 +5,8 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "react-slide-animation-router": "^2.0.3",
     "axios": "^0.21.0",
     "fontsource-roboto": "^3.0.3",
     "framer-motion": "^2.9.4",
