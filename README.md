@@ -33,7 +33,7 @@ BirdsEye lets you look at other simmilar tweets which can give you a sense of th
 
 # Usage
 
-<image src="https://media.giphy.com/media/I2cpp0VzIRrmlllhBM/giphy.gif"/>
+<image src="https://media.giphy.com/media/7T3sxqHgRuXhWEDGwK/giphy.gif"/>
 
 <br>
 
