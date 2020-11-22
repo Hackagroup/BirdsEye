@@ -5,7 +5,7 @@ import './display.css'
 // "ATYCLB"
 
 function Display(props) {
-  console.log(props)
+  // console.log(props)
   let entities = props.props.entities
   let hashtags_n = entities.hashtags.length
 
