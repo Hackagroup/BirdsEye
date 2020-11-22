@@ -1,5 +1,5 @@
 .Navbar {
-  height: 80px;
+  height: 75px;
   background-color: #45a1e5;
   display: flex;
   justify-content: space-between;
@@ -32,6 +32,7 @@
   margin-left: 5%;
   display: flex;
   justify-content: flex-start;
+  width: 100px;
 }
 
 .Navbar__search-icon {
@@ -118,4 +119,8 @@
   border-radius: 15px;
 }
 
+
+.custom{
+
+}
 
