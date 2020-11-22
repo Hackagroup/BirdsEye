@@ -16,14 +16,8 @@ import store from './store'
 import { SET_USER } from './actions/types'
 import isEmpty from './utils/isEmpty'
 
-import SlideRouter, { initSlideRouter } from 'react-slide-animation-router'
 import { createBrowserHistory } from 'history'
 const history = createBrowserHistory()
-
-initSlideRouter({
-  history,
-  routeAnimationDuration: 350,
-})
 
 function Wrapper(){
     return(
