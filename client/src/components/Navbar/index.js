@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { RESET_USER, SET_SEARCH } from '../../actions/types'
+import { RESET_USER, SET_STATE } from '../../actions/types'
 import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import './Navbar.css'
 import logo from '../../assets/logo-white.png'
@@ -72,8 +72,11 @@ function Navbar() {
               if ((e.key === 'Enter' || e.keyCode === 13) && search.trim().length > 0) {
                 // set search query in redux state - can use it inside dashboard now
                 dispatch({
-                  type: SET_SEARCH,
-                  payload: search,
+                  type: SET_STATE,
+                  payload: {
+                    searchQuery: search,
+                    searchQueryStatus: -1
+                  },
                 })
                 setSearch('') // reset
               }

@@ -7,7 +7,6 @@ import Navbar from './components/Navbar'
 
 import Landing from './views/landing/'
 import Dashboard from './views/dashboard/'
-import Search from './views/search'
 import Settings from './views/settings'
 
 import store from './store'
@@ -33,7 +32,6 @@ function App() {
         <Switch>
           <Route exact path="/landing" component={Landing} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path="/search" component={Search} />
           <PrivateRoute exact path="/settings" component={Settings} />
           {/* Default route */}
           <Route component={Landing} />
