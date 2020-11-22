@@ -1,4 +1,4 @@
-import { SET_USER } from '../actions/types'
+import { SET_USER, RESET_USER } from '../actions/types'
 
 const initialState = {
   isAuthenticated: false,
@@ -11,6 +11,10 @@ function userReducer(state = initialState, action) {
       return {
         ...state,
         ...action.payload,
+      }
+    case RESET_USER:
+      return {
+        ...initialState,
       }
     default:
       return state
