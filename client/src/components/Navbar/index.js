@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { RESET_USER } from '../../actions/types'
 import './Navbar.css'
 import logo from '../../assets/logo-white.png'
+import SearchIcon from '@material-ui/icons/Search';
+import CloseIcon from '@material-ui/icons/Close';
 
 function Navbar() {
+  const [search, setSearch] = useState('')
   const history = useHistory()
   const location = useLocation()
   const dispatch = useDispatch()
@@ -22,7 +25,16 @@ function Navbar() {
         <Link className="Navbar__logo" to="/dashboard">
           <img src={logo} alt="Birds eye logo"></img>
         </Link>
-        <input className="Navbar__search" type="search" name="search" placeholder="Search..." />
+        <SearchIcon/>
+          <input
+            className="Navbar__search"
+            type="text"
+            name="search"
+            placeholder="Search..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+        {search.length > 0 ? <CloseIcon onClick={() => setSearch('')}/> : null}
       </div>
       <div className="Navbar__right">
         <button
