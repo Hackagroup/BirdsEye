@@ -4,6 +4,7 @@
   "description": "#BirdsEye refers you to similar tweets from what you tweeted so you can see the other point of view hence giving you a birds-eye view",
   "main": "server.js",
   "dependencies": {
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",

@@ -1,12 +1,67 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
+import { makeStyles } from '@material-ui/core/styles';
+
+
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 import './settings.css'
+
+import Grid from '@material-ui/core/Grid';
+import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import Tooltip from '@material-ui/core/Tooltip';
+import Zoom from '@material-ui/core/Zoom';
+import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+import PersonIcon from '@material-ui/icons/Person';
 
 function Settings() {
   const user = useSelector((state) => state.user)
   const { userCredentials } = user
   const { screen_name } = userCredentials
+
+  const [formats, setFormats] = React.useState(() => ['phone']);
+  const handleFormat = (event, newFormats) => {
+    console.log(newFormats)
+    if (newFormats.length) {
+      setFormats(newFormats);
+    }
+  };
+
+  const toggleStyles = makeStyles((theme) => ({
+  toggleContainer: {
+    margin: theme.spacing(2, 0),
+  },
+}));
+
+  const useStyles = makeStyles((theme) => ({
+    formControl: {
+      margin: theme.spacing(1),
+      minWidth: 120,
+    },
+    selectEmpty: {
+      marginTop: theme.spacing(2),
+    },
+  }));
+  const classes = useStyles();
+  const toggle_classes = toggleStyles();
+
+    const [state, setState] = React.useState({
+    age: '',
+    name: 'hai',
+  });
+
+    const handleChange = (event) => {
+    const name = event.target.name;
+    setState({
+      ...state,
+      [name]: event.target.value,
+    });
+  };
+
 
   return (
     <>
@@ -15,8 +70,8 @@ function Settings() {
       </Helmet>
       <section id="settings-page-content">
         <div id="settings-panel">
-          <div class="title-wrapper" >
-            <h2 class="setting-title">User Information</h2>
+          <div className="title-wrapper" >
+            <h2 className="setting-title">User Information</h2>
           </div>
           
           <hr id="settings-hr"></hr>
@@ -24,7 +79,7 @@ function Settings() {
           {/* Add user photo here */}
           <img height="180" width="180" src="https://i.imgur.com/qZJqj94.png" />
           
-          <div class="text-wrapper">
+          <div className="text-wrapper">
 
             /* Add user info here */
             <p><strong>Username:</strong> <br></br>{screen_name}</p>
@@ -34,34 +89,62 @@ function Settings() {
           </div>
           
           <br></br>
-          <div class="title-wrapper" >
-            <h2 class="setting-title">Display Settings</h2>
+          <div className="title-wrapper" >
+            <h2 className="setting-title">Display Settings</h2>
           </div>
           
           <hr id="settings-hr"></hr>
 
           {/* Drop down for filtering - may want to change to Material UI*/}
-          <div class="text-wrapper">
-            <div><strong>Filter By:</strong>
-              <div class="dropdown">
-                <button class="dropbtn">- Select -</button>
-                <div class="dropdown-content">
-                  <a href="#">Mixed</a>
-                  <a href="#">Popularity</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Drop down for # Tweets - may want to change to Material UI*/}
-            <div><strong>Tweets Displayed:</strong> 
-              <div class="dropdown">
-                  <button class="dropbtn">- Select -</button>
-                  <div class="dropdown-content">
-                    <a href="#">10</a>
-                    <a href="#">20</a>
-                    <a href="#">30</a>
+          <div className="text-wrapper">
+            <div className="toggle_comps">
+              <strong>Filter By:</strong>
+              {/* <Grid container spacing={2}> */}
+              
+                  <div className={toggle_classes.toggleContainer}>
+                    <ToggleButtonGroup value={formats} onChange={handleFormat} aria-label="device">
+                      <Tooltip title="Mixed" TransitionComponent={Zoom} placement="top">
+                        <ToggleButton value="laptop" aria-label="laptop">
+                          <SupervisorAccountIcon />
+                        </ToggleButton>
+                      </Tooltip>
+                      <Tooltip title="Popular" TransitionComponent={Zoom} placement="top">
+                        <ToggleButton value="laptop" aria-label="laptop">
+                          <VerifiedUserIcon />
+                        </ToggleButton>
+                      </Tooltip>
+                      <Tooltip title="Regular" TransitionComponent={Zoom} placement="top">
+                        <ToggleButton value="laptop" aria-label="laptop">
+                          <PersonIcon />
+                        </ToggleButton>
+                      </Tooltip>
+                    </ToggleButtonGroup>
                   </div>
-                </div>
+
+            </div>
+            <br/>
+            <br/>
+            {/* Drop down for # Tweets - may want to change to Material UI*/}
+            <div>
+              <strong>Tweets: </strong> 
+              <FormControl variant="outlined" id="tweet_form" className={classes.formControl}>
+                <InputLabel htmlFor="outlined-age-native-simple">Tweets</InputLabel>
+                <Select
+                  native
+                  value={state.age}
+                  onChange={handleChange}
+                  label="Tweets"
+                  inputProps={{
+                    name: 'age',
+                    id: 'outlined-age-native-simple',
+                  }}
+                >
+                <option aria-label="None" value="" />
+                <option value={10}>Ten</option>
+                <option value={20}>Twenty</option>
+                <option value={30}>Thirty</option>
+              </Select>
+            </FormControl>
             </div>
           </div>
 

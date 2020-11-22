@@ -67,4 +67,14 @@
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
-  
+
+
+/* Inline CSS Code */
+.makeStyles-toggleContainer-9 {
+    margin-left:8px;
+    display: inline;
+}
+#tweet_form {
+    margin-top: -16px;
+    min-width: 120px;
+}
