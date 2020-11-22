@@ -68,15 +68,19 @@
 
 .Navbar__link-settings {
   margin-right: 10%;
+  padding: 0px 10px;
+  border-bottom: 2px solid transparent;
 }
 
 .Navbar__link-settings:hover {
   border-bottom: 2px solid hsl(0, 0%, 100%);
+  font-weight: bold;
 }
 
+/*
 .Navbar__link-settings-selected {
   border-bottom: 2px solid hsl(0, 0%, 100%);
-}
+}*/
 
 .Navbar__link-logout,
 .Navbar__link-logout:focus,
