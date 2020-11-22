@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { RESET_USER } from '../../actions/types'
+import { RESET_USER, SET_SEARCH } from '../../actions/types'
 import './Navbar.css'
 import logo from '../../assets/logo-white.png'
 import SearchIcon from '@material-ui/icons/Search';
@@ -33,8 +33,18 @@ function Navbar() {
             placeholder="Search..."
             value={search}
             onChange={e => setSearch(e.target.value)}
+            onKeyDown={e => {
+              if ((e.key === 'Enter' || e.keyCode === 13) && search.trim().length > 0) {
+                // set search query in redux state - can use it inside dashboard now
+                dispatch({
+                  type: SET_SEARCH,
+                  payload: search
+                })
+                setSearch('') // reset
+              }
+            }}
           />
-        {search.length > 0 ? <CloseIcon onClick={() => setSearch('')}/> : null}
+        {search.trim().length > 0 ? <CloseIcon onClick={() => setSearch('')}/> : null}
       </div>
       <div className="Navbar__right">
         <button
